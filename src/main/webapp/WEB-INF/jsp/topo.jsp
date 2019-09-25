@@ -29,14 +29,6 @@
 
     </tr>
     <tr>
-        <td>Garrett Winters</td>
-        <td>Accountant</td>
-        <td>Tokyo</td>
-        <td>63</td>
-        <td>2011/07/25</td>
-
-    </tr>
-    <tr>
         <td>Ashton Cox</td>
         <td>Junior Technical Author</td>
         <td>San Francisco</td>
