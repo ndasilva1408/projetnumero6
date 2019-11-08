@@ -39,6 +39,7 @@ public class RegisterController {
     public String savemember( @Valid Member member, BindingResult bindingResult){
         member.setRole(Roles.INVITE);
         member.setTopo(null);
+        member.setNoteList(null);
 
         if (bindingResult.hasErrors())
             return "register";

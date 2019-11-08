@@ -20,15 +20,15 @@
         </tr>
         <tr>
             <td>Date de naissance</td>
-            <td><input type="date" name="birth_date" min="1970-01-01" max="2008-01-31" /></td>
+            <td><input type="date" name="birthDate" min="1970-01-01" max="2008-01-31" /></td>
         </tr>
         <tr>
             <td>Prénom</td>
-            <td><input type="text" name="first_name" /></td>
+            <td><input type="text" name="firstName" /></td>
         </tr>
         <tr>
             <td>Nom</td>
-            <td><input type="text" name="last_name" /></td>
+            <td><input type="text" name="lastName" /></td>
         </tr>
         <tr>
             <td>Adresse</td>
@@ -36,46 +36,48 @@
         </tr>
         <tr>
             <td>N° de licence</td>
-            <td><input type="text" name="license_number" /></td>
+            <td><input type="text" name="licenseNumber" /></td>
         </tr>
         <tr>
             <td>Niveau</td>
             <td>
-                <p>
-                    <input type="radio" name="climbing lvl" value="1" />1
-                <input type="radio" name="climbing lvl" value="2"/>2
-                <input type="radio" name="climbing lvl" value="3"/>3
-                <input type="radio" name="climbing lvl" value="4"/>4
-                <input type="radio" name="climbing lvl" value="5a"/>5a
-                <input type="radio" name="climbing lvl" value="5b"/>5b
-                <input type="radio" name="climbing lvl" value="5c"/>5c
-                <input type="radio" name="climbing lvl" value="6a"/>6a
-                <input type="radio" name="climbing lvl" value="6a+"/>6a+
-                <input type="radio" name="climbing lvl" value="6b"/>6b
-                <input type="radio" name="climbing lvl" value="6b+"/>6b+
-                <input type="radio" name="climbing lvl" value="6c"/>6c
-                <input type="radio" name="climbing lvl" value="6c+"/>6c+
-                <input type="radio" name="climbing lvl" value="7a"/>7a
-                <input type="radio" name="climbing lvl" value="7a+"/>7a+
-                </p>
-                <p>
-                <input type="radio" name="climbing lvl" value="7b"/>7b
-                <input type="radio" name="climbing lvl" value="7b+"/>7b+
-                <input type="radio" name="climbing lvl" value="7c"/>7c
-                <input type="radio" name="climbing lvl" value="7c+"/>7c+
-                <input type="radio" name="climbing lvl" value="8a"/>8a
-                <input type="radio" name="climbing lvl" value="8a+"/>8a+
-                <input type="radio" name="climbing lvl" value="8b"/>8b
-                <input type="radio" name="climbing lvl" value="8b+"/>8b+
-                <input type="radio" name="climbing lvl" value="8c"/>8c
-                <input type="radio" name="climbing lvl" value="8c+"/>8c+
-                <input type="radio" name="climbing lvl" value="9a"/>9a
-                <input type="radio" name="climbing lvl" value="9a+"/>9a+
-                <input type="radio" name="climbing lvl" value="9b"/>9b
-                <input type="radio" name="climbing lvl" value="9b+"/>9b+
-                <input type="radio" name="climbing lvl" value="9c"/>9c
-                </p>
+                <form>
+                    <select type="text" name="climbingLvl">
+                        <option>3</option>
+                        <option>3+</option>
+                        <option>4a</option>
+                        <option>4b</option>
+                        <option>4c</option>
+                        <option>5a</option>
+                        <option>5b</option>
+                        <option>5c</option>
+                        <option>6a</option>
+                        <option>6a+</option>
+                        <option>6b</option>
+                        <option>6b+</option>
+                        <option>7a</option>
+                        <option>7a+</option>
+                        <option>7b</option>
+                        <option>7b+</option>
+                        <option>7c</option>
+                        <option>7c+</option>
+                        <option>8a</option>
+                        <option>8a+</option>
+                        <option>8b</option>
+                        <option>8b+</option>
+                        <option>8c</option>
+                        <option>8c+</option>
+                        <option>9a</option>
+                        <option>9a+</option>
+                    </select>
+                </form>
+
+
             </td>
+        </tr>
+        <tr>
+            <td>Adresse Email</td>
+            <td><input type="text" name="email"  /></td>
         </tr>
 
     </table>

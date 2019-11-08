@@ -60,17 +60,21 @@
                     <p>
                         Commentaires :
 
-                        ${place.note}
+                        ${topo.noteList}
                     </p>
 
-                    <form action="addComment" method="get" >
-                        <label for="comments">Donnez nous vos impressions :</label>
-                        <textarea id="comments" maxlength="255">
-                        </textarea>
-                        <button type="submit"  value="note"> Enregistrer </button>
-                    </form>
 
                 </form>
+                <c:if test="${sessionScope.role == 'Admin' || sessionScope.role == 'Membre'}">
+
+
+                    <form action="addComment" method="post" >
+                        <label for="comments">Donnez nous vos impressions :</label>
+                        <textarea id="comments" name="comments" maxlength="255">
+                        </textarea>
+                        <button type="submit"  name="login" value="${sessionScope.login}"> Enregistrer </button>
+                    </form>
+                </c:if>
 
             </div>
         </div>

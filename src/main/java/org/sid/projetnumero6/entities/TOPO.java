@@ -33,6 +33,10 @@ public class TOPO implements Serializable {
 
     private Place place;
 
+    @OneToMany
+    @JoinColumn(name = "note_id")
+    List<Note> noteList;
+
     private String name;
     private String description;
     private boolean available;

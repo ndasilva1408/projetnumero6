@@ -91,7 +91,8 @@ Place place;
 
     @RequestMapping(value="/savetopo",method = RequestMethod.POST)
     public String savetopo(@Valid TOPO topo,ModelMap model,BindingResult bindingResult,HttpServletRequest request){
-        model.put("place",place);
+        topo.setPlace(null);
+        topo.setAvailable(true);
         if (bindingResult.hasErrors())
             return "createTOPO";
 

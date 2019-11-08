@@ -37,7 +37,7 @@
                 <td>
 
                     <form  method="post">
-                        <button type="submit" name="button"  value="${member.id}"> Passer au rang de membre </button>
+                        <button type="submit" name="button"  value="${member.email}"> Passer au rang de membre </button>
 
                     </form>
 

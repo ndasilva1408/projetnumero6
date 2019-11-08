@@ -22,6 +22,9 @@ public class Note implements Serializable {
     @ManyToOne(targetEntity = Member.class,cascade = CascadeType.ALL)
      private Member member;
 
+    @ManyToOne(targetEntity = TOPO.class,cascade = CascadeType.ALL)
+    private TOPO topo;
+
     @ManyToOne
     @JoinColumn(name = "place_id")
 

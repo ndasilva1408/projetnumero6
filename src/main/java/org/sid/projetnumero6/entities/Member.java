@@ -2,6 +2,7 @@ package org.sid.projetnumero6.entities;
 
 
 import lombok.*;
+import org.hibernate.validator.constraints.UniqueElements;
 
 import javax.persistence.*;
 import javax.validation.Valid;
@@ -33,13 +34,20 @@ public class Member implements Serializable {
 
      String login;
      String password;
-     String birth_date;
-     String first_name;
-     String last_name;
+    @Column(name = "birth_date")
+     String birthDate;
+    @Column(name = "first_name")
+     String firstName;
+    @Column(name = "last_name")
+     String lastName;
      String address;
-     int license_number;
-     String climbing_lvl;
+    @Column(name = "license_number")
+     String licenseNumber;
+    @Column (name = "climbing_lvl")
+     String climbingLvl;
      public Roles role;
+
+     String email;
 
 
 

@@ -13,7 +13,7 @@
 </head>
 
 <div class="container">
-    <h3>Nos TOPOS</h3>
+    <h3>Liste des lieux d'escalade</h3>
 
     <jsp:include page="navbar.jsp"></jsp:include>
 
@@ -36,11 +36,10 @@
 
             </th>
 
-            <th class="th-sm">Région
+            <th class="th-sm">TOPOS
 
             </th>
-            <th class="th-sm">Détails
-            </th>
+
 
 
 
@@ -48,21 +47,19 @@
         </thead>
         <tbody>
 
-        <c:forEach  items="${topoList}" var ="topo">
+        <c:forEach  items="${placeList}" var ="place">
             <tr>
-                <td>${topo.place.name}</td>
-
-                <td>${topo.name}</td>
+                <td>${place.name}</td>
 
                 <td>
-                    <a href="topoRQPR?id=${topo.id}">
-                        Details
+                    <a href="topoRQPR?id=${place.id}">
+                        TOPOS
                     </a>
                 </td>
                 <c:if test="${sessionScope.role == 'Admin'}">
                     <td>
                         <form  method="post">
-                            <button type="submit" name="button"  value="${topo.id}"> Supprimer </button>
+                            <button type="submit" name="button"  value="${place.id}"> Supprimer </button>
 
                         </form>
                     </td>
@@ -78,9 +75,7 @@
         <tr>
             <th>Lieu
             </th>
-            <th>Région
-            </th>
-            <th>Détails
+            <th>TOPOS
             </th>
 
         </tr>
