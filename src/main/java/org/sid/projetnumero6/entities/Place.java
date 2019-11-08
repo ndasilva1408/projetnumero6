@@ -1,27 +1,40 @@
 package org.sid.projetnumero6.entities;
 
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
+import lombok.*;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.io.Serializable;
+import java.util.List;
 
 @Data
 @NoArgsConstructor @AllArgsConstructor @ToString
+@Getter
+@Setter
 
 @Entity
 public class Place implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY )
+
     private Long id;
-    private ClimbPath climbPath;
-    private Note note;
+
+    @OneToMany (targetEntity = ClimbPath.class,mappedBy = "place",cascade = CascadeType.ALL)
+
+    private List<ClimbPath>  climbPath;
+
+    @OneToMany (targetEntity = Note.class,mappedBy = "place",cascade = CascadeType.ALL)
+
+    private List<Note> note;
+
+    @OneToMany(targetEntity = TOPO.class,mappedBy = "place",cascade = CascadeType.ALL)
+
+    private List<TOPO> topo;
+
+
+    private String name;
+
+
 
 
 }

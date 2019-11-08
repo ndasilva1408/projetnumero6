@@ -1,27 +1,32 @@
 package org.sid.projetnumero6.entities;
 
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
+import lombok.*;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.io.Serializable;
+import java.util.List;
 
 @Data
 @NoArgsConstructor @AllArgsConstructor @ToString
+@Getter
+@Setter
 
 @Entity
 public class Note implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY )
+
     private Long id;
-    private User user;
-    private Long text;
+
+    @ManyToOne(targetEntity = Member.class,cascade = CascadeType.ALL)
+     private Member member;
+
+    @ManyToOne
+    @JoinColumn(name = "place_id")
+
+    private Place place;
+    private String text;
 
 
 

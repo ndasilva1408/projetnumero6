@@ -1,30 +1,43 @@
 package org.sid.projetnumero6.entities;
 
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
+import lombok.*;
 
 import javax.persistence.*;
+import javax.validation.Valid;
+
 import java.io.Serializable;
+import java.util.List;
 
 @Data
 @NoArgsConstructor @AllArgsConstructor @ToString
+@Getter
+@Setter
 
 @Entity
 public class TOPO implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY )
+
+
     private Long id;
-    private String name;
-    private String date;
-    private String region;
-    private Long description;
-    private Booking booking;
+
+
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "member_id")
+    private Member member;
+
+    @ManyToOne
+    @JoinColumn(name="place_id")
+
     private Place place;
+
+    private String name;
+    private String description;
     private boolean available;
-    private User user;
+    private String urlimg;
+
 
 
 }
