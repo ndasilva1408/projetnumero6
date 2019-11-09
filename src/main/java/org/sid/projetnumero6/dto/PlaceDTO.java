@@ -21,7 +21,6 @@ import javax.persistence.Id;
 public class PlaceDTO {
 
     private Long id;
-    private ClimbPathDTO climbPath;
     private NoteDTO note;
     private String name;
     private TOPODTO topo;

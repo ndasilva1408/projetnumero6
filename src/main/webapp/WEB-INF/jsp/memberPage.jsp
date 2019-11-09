@@ -11,7 +11,7 @@
 
 <body>
 <a><b>Bonjour ${sessionScope.login}</b></a>
-<p>(Profil Picture)</p>
+<p>Affichage des topos du membre ${sessionScope.topo}</p>
 
 
 <p>Messagerie</p>

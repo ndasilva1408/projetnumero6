@@ -40,7 +40,7 @@ public class PlaceController {
 
     @PostMapping(value="/saveplace")
     public String saveplace(@Valid Place place, BindingResult bindingResult){
-        place.setClimbPath(null);
+
         place.setTopo(null);
         place.setNote(null);
         if (bindingResult.hasErrors())

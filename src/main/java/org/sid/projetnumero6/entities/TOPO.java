@@ -27,6 +27,7 @@ public class TOPO implements Serializable {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "member_id")
     private Member member;
+    
 
     @ManyToOne
     @JoinColumn(name="place_id")
@@ -36,6 +37,10 @@ public class TOPO implements Serializable {
     @OneToMany
     @JoinColumn(name = "note_id")
     List<Note> noteList;
+
+    @OneToMany
+    @JoinColumn(name = "climbpath_id")
+    List<ClimbPath> climbPathList;
 
     private String name;
     private String description;

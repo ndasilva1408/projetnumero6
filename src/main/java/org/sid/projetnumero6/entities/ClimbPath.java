@@ -18,8 +18,8 @@ public class ClimbPath implements Serializable {
     private Long id;
 
     @ManyToOne
-    @JoinColumn(name = "place_id")
-    private Place place;
+    @JoinColumn(name = "topo_id")
+    private TOPO topo;
 
     private String lvl;
     private String name;

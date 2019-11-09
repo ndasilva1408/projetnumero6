@@ -19,9 +19,7 @@ public class Place implements Serializable {
 
     private Long id;
 
-    @OneToMany (targetEntity = ClimbPath.class,mappedBy = "place",cascade = CascadeType.ALL)
 
-    private List<ClimbPath>  climbPath;
 
     @OneToMany (targetEntity = Note.class,mappedBy = "place",cascade = CascadeType.ALL)
 

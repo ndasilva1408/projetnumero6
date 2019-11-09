@@ -1,6 +1,7 @@
 package org.sid.projetnumero6.dto;
 
 import lombok.*;
+import org.sid.projetnumero6.entities.ClimbPath;
 import org.sid.projetnumero6.entities.Member;
 import org.sid.projetnumero6.entities.Place;
 
@@ -20,7 +21,7 @@ public class TOPODTO {
     private Long id;
     private MemberDTO member;
     private PlaceDTO place;
-
+    private ClimbPathDTO climbPathDTO;
 
     private String name;
     private String description;

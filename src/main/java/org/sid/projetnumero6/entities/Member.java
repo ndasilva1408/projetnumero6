@@ -25,9 +25,9 @@ public class Member implements Serializable {
 
 
 
-    @ManyToOne
+    @OneToMany
     @JoinColumn(name = "topo_id")
-     TOPO topo;
+     List<TOPO> topoList;
     @OneToMany
     @JoinColumn(name = "note_id")
     List<Note> noteList;

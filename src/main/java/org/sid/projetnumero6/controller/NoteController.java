@@ -36,20 +36,25 @@ public class NoteController {
     public String addComment(HttpServletRequest request, HttpServletResponse response, ModelMap model , Note note){
 
         String login= request.getParameter("login");
+        String topoId = request.getParameter("topoId");
 
-        //TODO : RQP TOPO ID ET LIER A l'OBJET NOTE.
+        Long id2=Long.parseLong(topoId);
+
 
         member = memberRepository.findMemberByLoginEquals(login);
+        topo=topoRepository.findTOPOById(id2);
 
         String comment = request.getParameter("comments");
         note.setText(comment);
-        note.setMember(null);
+        note.setMember(member);
         note.setPlace(null);
+        note.setTopo(topo);
+
 
         noteRepository.save(note);
 
-        topo.getNoteList().add(note);
-        member.getNoteList().add(note);
+       // topo.getNoteList().add(note);
+        // member.getNoteList().add(note);
 
 
 

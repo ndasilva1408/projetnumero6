@@ -58,9 +58,10 @@
                     </p>
 
                     <p>
-                        Commentaires :
+                        <c:forEach var="entry" items="${topo.noteList}">
+                            ${entry}
+                        </c:forEach>
 
-                        ${topo.noteList}
                     </p>
 
 
@@ -69,6 +70,7 @@
 
 
                     <form action="addComment" method="post" >
+                        <input type="hidden" name="topoId" value="${topo.id}">
                         <label for="comments">Donnez nous vos impressions :</label>
                         <textarea id="comments" name="comments" maxlength="255">
                         </textarea>
