@@ -18,6 +18,8 @@ public class NoteDTO {
 
     private Long id;
     private MemberDTO member;
-    private Long text;
+    private TOPODTO topo;
+    private PlaceDTO place;
+    private String text;
 
 }

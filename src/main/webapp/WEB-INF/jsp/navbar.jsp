@@ -14,7 +14,7 @@
                 <a class="nav-link" href="${pageContext.request.contextPath}/memberList">Person List</a>
             </li>
 
-  <c:if test="${sessionScope.login == null}">
+  <c:if test="${sessionScope.member.login == null}">
         <li class="nav-item">
                 <a class="nav-link" href="${pageContext.request.contextPath}/register">Cr&eacute;er un compte</a>
         </li>
@@ -28,7 +28,7 @@
                 <a class="nav-link" href="${pageContext.request.contextPath}/regionList">TOPO</a>
             </li>
 
-<c:if test="${!empty sessionScope.login}">
+<c:if test="${!empty sessionScope.member.login}">
             <li class="nav-item">
                 <a class="nav-link" href="${pageContext.request.contextPath}/newtopo">Ajouter un TOPO</a>
             </li>
@@ -42,9 +42,9 @@
 
     <div >
         <ul class="navbar-nav ml-auto">
-        <c:if test="${!empty sessionScope.login}">
+        <c:if test="${!empty sessionScope.member.login}">
     <li class="nav-item">
-            <a class="nav-link" href="${pageContext.request.contextPath}/pageperso"> ${sessionScope.login} </a>
+            <a class="nav-link" href="${pageContext.request.contextPath}/pageperso"> ${sessionScope.member.login} </a>
     </li>
 
             <li class="nav-item">

@@ -8,7 +8,6 @@
     <title>Bienvenue</title>
 
     <link type="text/css" rel="stylesheet" href="bootstrap/dist/css/bootstrap.min.css">
-    <link type="text/css" rel="stylesheet" href="bootstrap/static.css/indexstyle.css">
 </head>
 <body>
 <header>

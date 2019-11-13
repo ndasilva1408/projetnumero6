@@ -53,9 +53,9 @@ public class LoginPageController {
         }
 
 
-        session.setAttribute("role",(memberRepository.findMemberByLoginEquals(login)).role.getAbreviation());
-        session.setAttribute("login",login);
-        session.setAttribute("member",member);
+
+        session.setAttribute("member",(memberRepository.findMemberByLoginEquals(login)));
+        session.setAttribute("topo",(memberRepository.findMemberByLoginEquals(login)).getTopo());
 
         return "memberPage";
 

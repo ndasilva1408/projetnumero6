@@ -7,8 +7,8 @@ import javax.persistence.*;
 import java.io.Serializable;
 import java.util.List;
 
-@Data
-@NoArgsConstructor @AllArgsConstructor @ToString
+
+@NoArgsConstructor @AllArgsConstructor
 @Getter
 @Setter
 
@@ -21,11 +21,11 @@ public class Place implements Serializable {
 
 
 
-    @OneToMany (targetEntity = Note.class,mappedBy = "place",cascade = CascadeType.ALL)
+    @OneToMany (targetEntity = Note.class,mappedBy = "place")
 
     private List<Note> note;
 
-    @OneToMany(targetEntity = TOPO.class,mappedBy = "place",cascade = CascadeType.ALL)
+    @OneToMany(targetEntity = TOPO.class,mappedBy = "place")
 
     private List<TOPO> topo;
 

@@ -1,6 +1,8 @@
 package org.sid.projetnumero6.entities;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.*;
 import org.hibernate.validator.constraints.UniqueElements;
 
@@ -8,12 +10,13 @@ import javax.persistence.*;
 import javax.validation.Valid;
 import javax.validation.constraints.Future;
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
 
-@Data
-@NoArgsConstructor @AllArgsConstructor @ToString
+
+@NoArgsConstructor @AllArgsConstructor
 @Getter @Setter
 
 @Entity
@@ -24,13 +27,11 @@ public class Member implements Serializable {
      Long id;
 
 
+    @ManyToMany(mappedBy = "member",fetch = FetchType.LAZY)
+     List<TOPO> topo = new ArrayList<>();
 
-    @OneToMany
-    @JoinColumn(name = "topo_id")
-     List<TOPO> topoList;
-    @OneToMany
-    @JoinColumn(name = "note_id")
-    List<Note> noteList;
+    @OneToMany(mappedBy = "member")
+    List<Note> noteList= new ArrayList<>();
 
      String login;
      String password;
@@ -44,7 +45,8 @@ public class Member implements Serializable {
     @Column(name = "license_number")
      String licenseNumber;
     @Column (name = "climbing_lvl")
-     String climbingLvl;
+    public String climbingLvl;
+
      public Roles role;
 
      String email;

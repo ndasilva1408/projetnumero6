@@ -12,31 +12,31 @@
 
         <tr>
             <td>Identifiant</td>
-            <td><input type="text" name="login" /></td>
+            <td><input type="text" name="login"/></td>
         </tr>
         <tr>
             <td>Mot de Passe</td>
-            <td><input type="password" name="password" /></td>
+            <td><input type="password" name="password"/></td>
         </tr>
         <tr>
             <td>Date de naissance</td>
-            <td><input type="date" name="birthDate" min="1970-01-01" max="2008-01-31" /></td>
+            <td><input type="date" name="birthDate" min="1970-01-01" max="2008-01-31"/></td>
         </tr>
         <tr>
             <td>Prénom</td>
-            <td><input type="text" name="firstName" /></td>
+            <td><input type="text" name="firstName"/></td>
         </tr>
         <tr>
             <td>Nom</td>
-            <td><input type="text" name="lastName" /></td>
+            <td><input type="text" name="lastName"/></td>
         </tr>
         <tr>
             <td>Adresse</td>
-            <td><input type="text" name="address" /></td>
+            <td><input type="text" name="address"/></td>
         </tr>
         <tr>
             <td>N° de licence</td>
-            <td><input type="text" name="licenseNumber" /></td>
+            <td><input type="text" name="licenseNumber"/></td>
         </tr>
         <tr>
             <td>Niveau</td>
@@ -77,10 +77,10 @@
         </tr>
         <tr>
             <td>Adresse Email</td>
-            <td><input type="text" name="email"  /></td>
+            <td><input type="text" name="email"/></td>
         </tr>
 
     </table>
-    <input type="submit" value="Submit" /></form>
+    <input type="submit" value="Submit"/></form>
 </body>
 </html>

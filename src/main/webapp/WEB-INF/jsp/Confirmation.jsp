@@ -71,7 +71,7 @@
                     <p>
                     <label>Niveau:</label>
                     <label >
-                        ${member.climbing_lvl}
+                        ${member.climbingLvl}
                     </label>
                     </p>
                 </div>

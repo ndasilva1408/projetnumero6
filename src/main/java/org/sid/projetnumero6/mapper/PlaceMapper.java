@@ -12,12 +12,12 @@ import org.sid.projetnumero6.entities.Place;
 public interface PlaceMapper  {
 
 
-    @Mapping(target = "note", source = "note")
+
     PlaceDTO toPlace(Place place);
 
 
 
-    @Mapping(target = "note", source = "note")
+
     Place toDTO(PlaceDTO placeDTO);
 
 

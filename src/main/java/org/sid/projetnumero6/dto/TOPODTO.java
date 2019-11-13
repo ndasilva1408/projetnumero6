@@ -5,6 +5,7 @@ import org.sid.projetnumero6.entities.ClimbPath;
 import org.sid.projetnumero6.entities.Member;
 import org.sid.projetnumero6.entities.Place;
 
+import java.util.List;
 
 
 @Data
@@ -19,9 +20,10 @@ import org.sid.projetnumero6.entities.Place;
 public class TOPODTO {
 
     private Long id;
-    private MemberDTO member;
+    private List<MemberDTO> member;
     private PlaceDTO place;
-    private ClimbPathDTO climbPathDTO;
+    private List<ClimbPathDTO> climbPathDTOList;
+    private List<NoteDTO> noteList;
 
     private String name;
     private String description;

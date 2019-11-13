@@ -12,12 +12,12 @@ public interface MemberMapper  {
 
 
     @Mapping(target = "birth_date",dateFormat = "dd.MM.yyyy")
-    @Mapping(target = "topo",source = "topo")
+
 
 
     MemberDTO toMember(Member member);
 
-    @Mapping(target = "topo", source = "topo")
+
 
 
 

@@ -18,17 +18,18 @@ import java.util.List;
 public class MemberDTO {
 
     private Long id;
-    TOPODTO topo;
-    List<NoteDTO> noteDTOList;
+    List<TOPODTO> topo;
+    List<NoteDTO> noteList;
     String login;
     String password;
     String birth_date;
     String first_name;
     String last_name;
     String address;
-    int license_number;
+    String license_number;
     String climbing_lvl;
     String role;
+    String email;
 
 
 

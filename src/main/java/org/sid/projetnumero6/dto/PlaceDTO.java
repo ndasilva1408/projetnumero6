@@ -8,6 +8,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import java.util.List;
 
 @Data
 @NoArgsConstructor
@@ -21,8 +22,9 @@ import javax.persistence.Id;
 public class PlaceDTO {
 
     private Long id;
-    private NoteDTO note;
+    private List<NoteDTO> note;
+    private List<TOPODTO> topo;
     private String name;
-    private TOPODTO topo;
+
 
 }

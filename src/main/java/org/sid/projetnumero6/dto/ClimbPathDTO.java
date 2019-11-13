@@ -17,8 +17,10 @@ import org.sid.projetnumero6.entities.Note;
 
 public class ClimbPathDTO{
     private Long id;
-    private String name;
-    private TOPODTO topodto;
+    private TOPODTO topo;
+
     private String lvl;
+    private String name;
+
 
 }

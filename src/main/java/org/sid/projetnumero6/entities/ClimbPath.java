@@ -6,8 +6,8 @@ import lombok.*;
 import javax.persistence.*;
 import java.io.Serializable;
 
-@Data
-@NoArgsConstructor @AllArgsConstructor @ToString
+
+@NoArgsConstructor @AllArgsConstructor
 @Getter
 @Setter
 
@@ -18,7 +18,6 @@ public class ClimbPath implements Serializable {
     private Long id;
 
     @ManyToOne
-    @JoinColumn(name = "topo_id")
     private TOPO topo;
 
     private String lvl;

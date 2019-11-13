@@ -1,6 +1,7 @@
 package org.sid.projetnumero6.entities;
 
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.*;
 
 import javax.persistence.*;
@@ -9,8 +10,8 @@ import javax.validation.Valid;
 import java.io.Serializable;
 import java.util.List;
 
-@Data
-@NoArgsConstructor @AllArgsConstructor @ToString
+
+@NoArgsConstructor @AllArgsConstructor
 @Getter
 @Setter
 
@@ -23,23 +24,17 @@ public class TOPO implements Serializable {
     private Long id;
 
 
-
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "member_id")
-    private Member member;
+    @ManyToMany(fetch = FetchType.LAZY,cascade = {CascadeType.ALL})
+    private List<Member> member;
     
 
     @ManyToOne
-    @JoinColumn(name="place_id")
-
     private Place place;
 
-    @OneToMany
-    @JoinColumn(name = "note_id")
+    @OneToMany(mappedBy = "topo")
     List<Note> noteList;
 
-    @OneToMany
-    @JoinColumn(name = "climbpath_id")
+    @OneToMany(mappedBy = "topo")
     List<ClimbPath> climbPathList;
 
     private String name;

@@ -6,8 +6,8 @@ import lombok.*;
 import javax.persistence.*;
 import java.io.Serializable;
 
-@Data
-@NoArgsConstructor @AllArgsConstructor @ToString
+
+@NoArgsConstructor @AllArgsConstructor
 @Getter
 @Setter
 
@@ -18,10 +18,9 @@ public class Booking implements Serializable {
     private Long id;
 
     @OneToOne
-    @JoinColumn(name = "member_id")
     private Member member;
 
-    private ClimbPath climbPath;
+    private TOPO topo;
 
 }
 
