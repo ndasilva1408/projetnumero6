@@ -58,7 +58,7 @@ public class MemberController {
     }
 
 
-    @PostMapping()
+    @PostMapping("/nps")
     public String addTopoToTopoOwner (HttpServletRequest request){
         TOPO topo;
         Member member;

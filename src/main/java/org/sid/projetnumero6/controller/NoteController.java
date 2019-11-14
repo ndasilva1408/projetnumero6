@@ -53,8 +53,6 @@ public class NoteController {
 
         noteRepository.save(note);
 
-       // topo.getNoteList().add(note);                                cause overflow
-        // member.getNoteList().add(note);
 
 
 

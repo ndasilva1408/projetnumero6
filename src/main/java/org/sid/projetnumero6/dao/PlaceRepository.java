@@ -11,5 +11,6 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 public interface PlaceRepository extends JpaRepository<Place,Long> {
 
     Place deletePlaceById(Long id);
+    Place findByName(String name);
 
 }

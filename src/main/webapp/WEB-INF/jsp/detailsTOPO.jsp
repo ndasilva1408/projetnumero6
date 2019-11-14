@@ -22,15 +22,16 @@
 
 
                     <p>
-                        <label>Region:</label>
+                        <label>Titre:</label>
                         <label>
                             ${topo.name}
+                                ${sessionScope.member.role}
                         </label>
                     </p>
                     <p>
                         <label>Nom du Lieu:</label>
                         <label>
-                            ${topo.place}
+                            ${topo.place.name}
                         </label>
                     </p>
 

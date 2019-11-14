@@ -29,17 +29,16 @@
                 </p>
 
                 <p>
-                <label>Region:</label>
+                <label>Titre:</label>
                 <label >
-                    <% String region = request.getParameter("region"); %>
-                    <% out.println(region); %>
+                    <% String name = request.getParameter("name"); %>
+                    <% out.println(name); %>
                 </label>
                 </p>
                 <p>
                 <label>Nom du Lieu:</label>
                 <label >
-                    <% String name = request.getParameter("place"); %>
-                    <% out.println(name); %>
+                   ${topo.place.name}
                 </label>
                 </p>
 
