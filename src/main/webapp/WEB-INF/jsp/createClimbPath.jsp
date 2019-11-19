@@ -1,4 +1,3 @@
-
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
@@ -11,14 +10,14 @@
 </head>
 <body>
 <h1>Register Form</h1>
-<form id="topoform" action="saveplace" method="post" >
+<form id="cbform" action="saveclimbPath" method="post" >
     <table style="with: 50%">
         <tr>
-            <td>Nom du lieu</td>
+            <td>Nom de la voie</td>
             <td> <input type="text" name="name"/></td>
         </tr>
     </table>
-        <input type="submit" value="Submit" />
+    <input type="submit" value="Submit" />
 </form>
 
 </body>

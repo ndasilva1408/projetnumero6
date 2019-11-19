@@ -32,9 +32,6 @@
             <li class="nav-item">
                 <a class="nav-link" href="${pageContext.request.contextPath}/newtopo">Ajouter un TOPO</a>
             </li>
-    <li class="nav-item">
-        <a class="nav-link" href="${pageContext.request.contextPath}/newPlace">Ajouter un lieu</a>
-    </li>
 </c:if>
         </ul>
 

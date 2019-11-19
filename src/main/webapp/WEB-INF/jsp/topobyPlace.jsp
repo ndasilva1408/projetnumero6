@@ -17,7 +17,7 @@
 
     <jsp:include page="navbar.jsp"></jsp:include>
 
-    <form action="" method="post">
+    <form action="" method="get">
         <table>
             <tr>
                 <td>Mot Clé:</td>
@@ -87,5 +87,18 @@
         </tfoot>
 
     </table>
+    <div>
+        <ul class="nav nav-pills">
+            <li>
+
+                <c:forEach items="${pages}" var="pa" varStatus="status">
+                    <a href="regionList?page=${status.index}">
+                    <c:out value="${status.index}"/>
+                    </a>
+                </c:forEach>
+
+            </li>
+        </ul>
+    </div>
 
 </div>

@@ -1,14 +1,18 @@
 package org.sid.projetnumero6.controller;
 
 import antlr.collections.AST;
+import org.sid.projetnumero6.dao.MemberRepository;
 import org.sid.projetnumero6.dao.PlaceRepository;
 import org.sid.projetnumero6.dao.TOPORepository;
 import org.sid.projetnumero6.dto.TOPODTO;
+import org.sid.projetnumero6.entities.Member;
 import org.sid.projetnumero6.entities.Place;
 import org.sid.projetnumero6.entities.TOPO;
 import org.sid.projetnumero6.service.TopoService;
 import org.sid.projetnumero6.service.TopoServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
@@ -21,7 +25,9 @@ import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 
 @Controller
@@ -32,6 +38,8 @@ public class TopoController {
     TOPORepository topoRepository;
     @Autowired
     PlaceRepository placeRepository;
+    @Autowired
+    MemberRepository memberRepository;
 
 
     Place place;
@@ -40,11 +48,29 @@ public class TopoController {
 
     // Liste des topos
     @RequestMapping(value = {"/regionList"}, method = RequestMethod.GET)
-    public String viewTOPOlist(ModelMap model, HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    public String viewTOPOlist(ModelMap model,
+                               HttpServletRequest request,
+                               @RequestParam(name = "page", defaultValue = "0") int p,
+                               @RequestParam(name = "size", defaultValue = "2") int s)
+            throws ServletException, IOException {
 
-        model.put("topoList", topoRepository.findAll());
+        String mc = request.getParameter("mc");
 
 
+        if (mc != null) {
+            Page<TOPO> topos  =topoRepository.chercher("%" + mc + "%", new PageRequest(p, s));
+            model.put("topoList",topos.getContent());
+
+        } else {
+
+            Page<TOPO> topos = topoRepository.findAll(new PageRequest(p, s));
+            model.addAttribute("topoList", topos.getContent());
+
+            int[] pages = new int[topos.getTotalPages()];
+            model.addAttribute("pages", pages);
+
+
+        }
         return "topobyPlace";
 
     }
@@ -90,21 +116,39 @@ public class TopoController {
 
     @RequestMapping(value = "/savetopo", method = RequestMethod.POST)
     public String savetopo(@Valid TOPO topo, ModelMap model, BindingResult bindingResult, HttpServletRequest request) {
-        Place topoPlace = new Place();
+        Place topoPlace;
+        Member member;
+        List<TOPO> topos = new ArrayList<TOPO>();
+        List<Member> members = new ArrayList<Member>();
 
+//Recupération des parametres dans la JSP
         String placename = request.getParameter("placeName");
+        String login = request.getParameter("topoOwner");
 
-        topoPlace=placeRepository.findByName(placename);
+//On trouve les objets correspondant dans les Repository
+        topoPlace = placeRepository.findByName(placename);
+        member = memberRepository.findMemberByLoginEquals(login);
 
+        members.add(member);
+        topos.add(topo);
+
+
+        //Et on les ajoutes pour créer les liaisons
+        member.setTopo(topos);
+        topo.setMember(members);
         topo.setPlace(topoPlace);
         topo.setAvailable(true);
+
+
         if (bindingResult.hasErrors())
             return "createTOPO";
 
-        else
-
+        else {
             topoRepository.save(topo);
-        return "validTOPO";
+            memberRepository.save(member);
+        }
+
+        return "index";
     }
 
 
@@ -119,25 +163,9 @@ public class TopoController {
         }
     }
 
-    @PostMapping(value = "/chercher")
-    protected String searchByMc(HttpServletRequest request, HttpServletResponse response, ModelMap model)
-            throws ServletException, IOException {
 
 
-        return "regionList";
-    }
 
-    // Liste des topos
-    @RequestMapping(value = {"/topobyPlace"}, method = RequestMethod.GET)
-    public String viewTOPObyPlace(ModelMap model, HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-        topoRepository.findTOPOSByPlace(place);
-
-        model.put("topoList", topoRepository.findTOPOSByPlace(place));
-
-        return "topobyPlace";
-
-    }
 
 
 }

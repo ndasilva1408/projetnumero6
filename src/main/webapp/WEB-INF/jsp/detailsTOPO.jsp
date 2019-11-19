@@ -25,7 +25,7 @@
                         <label>Titre:</label>
                         <label>
                             ${topo.name}
-                                ${sessionScope.member.role}
+
                         </label>
                     </p>
                     <p>
@@ -51,10 +51,17 @@
                                 Tuto Indisponible
                             </c:if>
                         </label>
-                        <c:if test="${sessionScope.member.role == 'Admin' || sessionScope.member.role == 'Membre'}">
+                <c:if test="${sessionScope.member.role == 'Admin' || sessionScope.member.role == 'Membre'}">
 
+                    <form action="demandBooking" method="post">
+                        <input type="hidden" name="topoId" value="${topo.id}">
+                        <input type="hidden" name="topoOwner" value="${topo.member.login}">
 
-                        </c:if>
+                    <button type="submit" name="login" value="${sessionScope.member.login}"> Réserver</button>
+
+                    </form>
+
+                 </c:if>
                     </p>
 
                     <p>
@@ -72,7 +79,7 @@
 
 
                 </form>
-                <c:if test="${sessionScope.member.role == 'Admin' || sessionScope.member.role == 'Membre'}">
+                <c:if test="${sessionScope.role == 'Admin' || sessionScope.role == 'Membre'}">
 
 
                     <form action="addComment" method="post">
@@ -83,13 +90,7 @@
                         <button type="submit" name="login" value="${sessionScope.member.login}"> Enregistrer</button>
                     </form>
 
-                    <form action="addTopoToTopoOwner" method="post">
-                        <input type="hidden" name="topoId" value="${topo.id}">
-                        <button type="submit" name="topoOwner" value="${sessionScope.member.login}">Ajouter ce TOPO a
-                            vos
-                            possession
-                        </button>
-                    </form>
+
                 </c:if>
 
             </div>

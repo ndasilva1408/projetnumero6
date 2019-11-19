@@ -10,8 +10,13 @@
 </head>
 <body>
 <h1>Register Form</h1>
-<form id="topoform" action="savetopo" method="post" enctype="multipart/form-data" target="_blank">
+<form id="topoform" action="savetopo" method="post" >
     <table style="with: 50%">
+
+
+
+        <input type="hidden" name="topoOwner" value="${sessionScope.member.login}">
+
 
 
         <tr>
@@ -25,6 +30,9 @@
                     </c:forEach>
                 </select>
             </td>
+            <li class="nav-item">
+                <a class="nav-link" href="${pageContext.request.contextPath}/newPlace">Ajouter un lieu</a>
+            </li>
 
 
         </tr>
@@ -44,6 +52,8 @@
            placeholder="http://example.com"
            required
     >
+
+
 
 
     <p>
