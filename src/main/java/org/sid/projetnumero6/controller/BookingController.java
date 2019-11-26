@@ -60,9 +60,7 @@ public class BookingController {
 
         Member topoOwner2= memberRepository.findMemberByLoginEquals(topoOwner);
 
-//TODO Message de reservation (Creer un boolean dans Booking "DemandeEnCours" , si off msg avec bouton pas affiche , si on , Demande avec bouton Oui Non
-// TODO Oui -> Topo.available passe indispo pdt 1 semaine , "DemandeEnCours" passe false.
-// TODO Non-> "DemandeEnCours" passe false et rien ne change.
+
 
         booking.setTopo(topo);
         booking.setBooker(member);

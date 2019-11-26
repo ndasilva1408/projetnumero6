@@ -3,10 +3,13 @@
 <html>
 <head>
     <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
-    <title>Registration Form</title>
+    <title>Nouveau compte</title>
+
 </head>
 <body>
-<h1>Register Form</h1>
+
+<img class="bann-amicale" src="bootstrap/bankimage/LesAmisDelEscalade.png" style="width:150px" alt="Logo"/>
+
 <form action="savemember" method="post">
     <table style="with: 50%">
 
