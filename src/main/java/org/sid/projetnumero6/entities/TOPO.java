@@ -33,14 +33,18 @@ public class TOPO implements Serializable {
 
     @OneToMany(mappedBy = "topo")
     List<Note> noteList;
-
     @OneToMany(mappedBy = "topo")
     List<ClimbPath> climbPathList;
+    @OneToMany(mappedBy = "topo")
+    List<Booking> bookingList;
+
 
     private String name;
     private String description;
-    private boolean available;
     private String urlimg;
+    private boolean available;
+    private boolean officiel= false;
+
 
 
 

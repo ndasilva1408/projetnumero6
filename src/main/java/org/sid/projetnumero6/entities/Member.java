@@ -32,6 +32,10 @@ public class Member implements Serializable {
 
     @OneToMany(mappedBy = "member")
     List<Note> noteList= new ArrayList<>();
+    @OneToMany(mappedBy = "owner")
+    List<Booking> bookingDemandList;
+    @OneToMany(mappedBy = "booker")
+    List<Booking> bookingList;
 
      String login;
      String password;
@@ -47,11 +51,13 @@ public class Member implements Serializable {
     @Column (name = "climbing_lvl")
     public String climbingLvl;
 
+
      public Roles role;
 
      String email;
 
 
+     boolean demandeDePret=false;
 
 
 

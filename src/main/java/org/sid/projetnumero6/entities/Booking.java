@@ -18,9 +18,14 @@ public class Booking implements Serializable {
     private Long id;
 
     @OneToOne
-    private Member member;
+    public Member owner;
 
-    private TOPO topo;
+    @ManyToOne
+    public TOPO topo;
+    @ManyToOne
+    public Member booker;
+
+    public boolean demandeEnCours=false;
 
 }
 

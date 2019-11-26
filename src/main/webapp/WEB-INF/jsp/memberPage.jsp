@@ -11,30 +11,73 @@
 
 
 <body>
-<a><b>Bonjour ${sessionScope.login}</b></a>
-<p>Affichage des topos du membre
+<a><b>Bonjour ${sessionScope.member.login}</b></a>
+<p>Vos TOPOS:</p>
 <div>
-
+    <!-- Affichage de tous les TOPOS du membre -->
     <c:forEach var="entry" items="${sessionScope.topo}">
-      <div> ${entry.name}</div>
+        <div> ${entry.name}</div>
         <div><c:if test="${entry.available == true}">
-           <button style="background-color: #1e7e34" type="button">
-               Disponible</button>
+            <button style="background-color: #1e7e34" type="button">
+                Disponible
+            </button>
         </c:if>
             <c:if test="${entry.available == false}">
-            <button style="background-color: #a71d2a" type="button">
-                Indisponible
+                <p>
+                    <button style="background-color: #a71d2a" type="button">
+                        Indisponible
+                    </button>
+                </p>
+                </p>
+                <form action="pageperso" method="post">
+                    <p>
+                        <input type="hidden" name="topoName" value="${entry.name}"/>
+                        <input type="submit" name="value" value="rendre disponible"/>
+                    </p>
+                </form>
+
             </c:if>
         </div>
+    </c:forEach>
+    <!-- Système d'affichage des demandes de prêt -->
+    <c:if test="${sessionScope.demande == true}">
 
-</c:forEach>
+        <form action="pageperso" method="post">
+            <c:forEach var="entry" items="${sessionScope.booking}">
+
+                <c:if test="${entry.demandeEnCours == true}">
+
+                    ${entry.booker.login} souhaite emprunter votre exemplaire de "${entry.topo.name}"
+
+                    <input type="hidden" name="topoName" value="${entry.topo.name}"/>
+                    <input type="submit" name="value" value="oui"/>
+
+                    <input type="submit" name="value" value="non"/>
+
+                </c:if>
+
+            </c:forEach>
+
+        </form>
+    </c:if>
+
+    <!-- Affichage de vos demandes en cours -->
+
+    <c:forEach var="entry" items="${sessionScope.demandBooking}">
+        <p>
+            <c:if test="${entry.demandeEnCours == true}">
+                Votre réservation pour "${entry.topo.name}" est toujours en attente de la réponse de ${entry.owner.login} !
+
+            </c:if>
+        </p>
+
+    </c:forEach>
+
+
 </div>
-</p>
 
-<p>Messagerie</p>
-<p>Modifier informations</p>
-<td> <a href="${pageContext.request.contextPath}index"> <b>Retour accueil</b> </a> </td>
 
+<td><a href="${pageContext.request.contextPath}index"> <b>Retour accueil</b> </a></td>
 
 
 </body>

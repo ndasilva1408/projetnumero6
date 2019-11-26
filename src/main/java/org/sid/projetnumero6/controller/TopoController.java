@@ -58,8 +58,8 @@ public class TopoController {
 
 
         if (mc != null) {
-            Page<TOPO> topos  =topoRepository.chercher("%" + mc + "%", new PageRequest(p, s));
-            model.put("topoList",topos.getContent());
+            Page<TOPO> topos = topoRepository.chercher("%" + mc + "%", new PageRequest(p, s));
+            model.put("topoList", topos.getContent());
 
         } else {
 
@@ -111,11 +111,28 @@ public class TopoController {
         return "detailsTOPO";
     }
 
+    //Estampillage Officiel des amis de l'escalade
+    @PostMapping("/topoRQPR")
+    public String officialTopo(HttpServletRequest request) {
+        String Official = request.getParameter("Officiel");
+        String topo = request.getParameter("topoName");
+
+        TOPO topo2 = topoRepository.findTOPOByName(topo);
+        if (Official.equals("Officiel")) {
+            topo2.setOfficiel(true);
+            topoRepository.save(topo2);
+
+        }
+
+
+        return "index";
+    }
+
 
     //Method pour creer un nouveau topo
 
     @RequestMapping(value = "/savetopo", method = RequestMethod.POST)
-    public String savetopo(@Valid TOPO topo, ModelMap model, BindingResult bindingResult, HttpServletRequest request) {
+    public String savetopo(@Valid TOPO topo, BindingResult bindingResult, HttpServletRequest request) {
         Place topoPlace;
         Member member;
         List<TOPO> topos = new ArrayList<TOPO>();
@@ -162,10 +179,6 @@ public class TopoController {
             return "regionList";
         }
     }
-
-
-
-
 
 
 }

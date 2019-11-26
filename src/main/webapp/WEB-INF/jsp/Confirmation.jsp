@@ -17,13 +17,7 @@
             <div class="panel-heading">Confirmation</div>
             <div class="panel-body">
                 <div class="form-group">
-                    <p>
-                    <label>ID:</label>
-                    <label >
-                        <% String id = request.getParameter("id"); %>
-                        <% out.println(id); %>
-                    </label>
-                    </p>
+
                     <p>
 
                     <label>Login:</label>
@@ -36,21 +30,21 @@
                     <p>
                     <label>Date de Naissance:</label>
                     <label >
-                        <% String birth_date = request.getParameter("birth_date"); %>
+                        <% String birth_date = request.getParameter("birthDate"); %>
                         <% out.println(birth_date); %>
                     </label>
                     </p>
                     <p>
                     <label>Pr&eacute;nom:</label>
                     <label >
-                        <% String first_name = request.getParameter("first_name"); %>
+                        <% String first_name = request.getParameter("firstName"); %>
                         <% out.println(first_name); %>
                     </label>
                     </p>
                     <p>
                     <label>Nom:</label>
                     <label >
-                        <% String last_name = request.getParameter("last_name"); %>
+                        <% String last_name = request.getParameter("lastName"); %>
                         <% out.println(last_name); %>
                     </label>
                     </p>
@@ -64,7 +58,7 @@
                     <p>
                     <label>Num&eacute;ro de licence:</label>
                     <label >
-                        <% String license_number = request.getParameter("license_number"); %>
+                        <% String license_number = request.getParameter("licenseNumber"); %>
                         <% out.println(license_number); %>
                     </label>
                     </p>

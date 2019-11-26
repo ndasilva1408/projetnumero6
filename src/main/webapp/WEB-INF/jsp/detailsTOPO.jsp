@@ -18,6 +18,19 @@
         <div class="panel-body">
             <div class="form-group">
 
+                <c:if test="${sessionScope.role == 'Admin' || sessionScope.role == 'Membre'}">
+                    <li class="nav-item">
+                        <a class="nav-link" href="${pageContext.request.contextPath}/createClimbPath">Ajouter une
+                            voie </a>
+                    </li>
+                    <c:if test="${topo.officiel == false}">
+                        <form action="topoRQPR" method="post">
+                            <input type="hidden" name="topoName" value="${topo.name}"/>
+                            <input type="submit" value="Officiel" name="Officiel"/>
+                        </form>
+                    </c:if>
+                </c:if>
+
                 <form action="getTopoById" method="get">
 
 
@@ -42,26 +55,44 @@
                         </label>
                     </p>
 
+
+                    <p>
+                        <c:forEach var="entry" items="${topo.climbPathList}">
+                    <div> ${entry.name}</div>
+                    <div><a href="detailsClimbPath?id=${entry.id}">Détails</a></div>
+                    </c:forEach>
+
+                    </p>
+
                     <p>
                         <label>
                             <c:if test="${topo.available == true}">
                                 Disponible
+
+
+                                <c:if test="${sessionScope.role == 'Admin' || sessionScope.role == 'Membre'}">
+
+
+                                    <c:forEach var="entry" items="${topo.member}">
+                                        <div>
+
+                                            <a href="detailsBooking?id=${entry.id}&topo.id=${topo.id}">Réservez auprès
+                                                de ${entry.login}</a>
+
+                                        </div>
+                                    </c:forEach>
+
+                                </c:if>
                             </c:if>
+
+
                             <c:if test="${topo.available == false}">
                                 Tuto Indisponible
                             </c:if>
+
                         </label>
-                <c:if test="${sessionScope.member.role == 'Admin' || sessionScope.member.role == 'Membre'}">
 
-                    <form action="demandBooking" method="post">
-                        <input type="hidden" name="topoId" value="${topo.id}">
-                        <input type="hidden" name="topoOwner" value="${topo.member.login}">
 
-                    <button type="submit" name="login" value="${sessionScope.member.login}"> Réserver</button>
-
-                    </form>
-
-                 </c:if>
                     </p>
 
                     <p>
@@ -90,6 +121,10 @@
                         <button type="submit" name="login" value="${sessionScope.member.login}"> Enregistrer</button>
                     </form>
 
+
+                </c:if>
+                <c:if test="${topo.officiel == true}">
+                    « Officiel Les amis de l’escalade »
 
                 </c:if>
 

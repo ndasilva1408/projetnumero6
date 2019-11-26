@@ -16,6 +16,8 @@ public class BookingDTO  {
 
     private Long id;
     private MemberDTO member;
-    private ClimbPathDTO climbPath;
+    private TOPODTO topo;
+
+    private boolean demandeEnCours;
 
 }

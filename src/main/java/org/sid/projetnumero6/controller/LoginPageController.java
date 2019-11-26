@@ -53,20 +53,21 @@ public class LoginPageController {
         }
 
 
-
         session.setAttribute("member",(memberRepository.findMemberByLoginEquals(login)));
         session.setAttribute("topo",(memberRepository.findMemberByLoginEquals(login)).getTopo());
         session.setAttribute("role",(memberRepository.findMemberByLoginEquals(login)).getRole().getAbreviation());
+        session.setAttribute("booking",(memberRepository.findMemberByLoginEquals(login).getBookingDemandList()));
+        session.setAttribute("demandBooking",(memberRepository.findMemberByLoginEquals(login).getBookingList()));
+        session.setAttribute("demande",(memberRepository.findMemberByLoginEquals(login).isDemandeDePret()));
 
         return "memberPage";
 
 }
 
     @GetMapping("/deconnect")
-
     public String deconnexion(HttpServletRequest request){
         request.getSession().invalidate();
-        return "index";
+        return "loginPage";
     }
 
 

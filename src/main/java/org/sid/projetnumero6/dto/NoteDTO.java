@@ -12,8 +12,6 @@ import org.sid.projetnumero6.entities.Member;
 @Setter
 
 
-//commentaire
-
 public class NoteDTO {
 
     private Long id;

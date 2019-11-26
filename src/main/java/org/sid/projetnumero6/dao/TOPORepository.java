@@ -30,6 +30,8 @@ public interface TOPORepository extends JpaRepository<TOPO,Long> {
     ArrayList<TOPO> findTOPOSByPlace(Place place);
     @Transactional
     ArrayList<TOPO> findTOPOSByAvailable(Boolean b);
+    @Transactional
+    TOPO findTOPOByName(String toponame);
 
     @Transactional
     @Query("select t from TOPO t where t.name like :x" + " or t.place.name like: x")

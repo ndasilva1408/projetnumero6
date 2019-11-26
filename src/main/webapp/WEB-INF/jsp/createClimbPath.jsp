@@ -10,14 +10,67 @@
 </head>
 <body>
 <h1>Register Form</h1>
-<form id="cbform" action="saveclimbPath" method="post" >
+<form id="cbform" action="" method="post" >
     <table style="with: 50%">
+
+        <td>Nom du TOPO lié a cette voie</td>
+
+        <td>
+            <select name="topoName" >
+
+                <c:forEach var="entry" items="${topoList}">
+                    <option>${entry.name}</option>
+                </c:forEach>
+            </select>
+        </td>
+
+
         <tr>
             <td>Nom de la voie</td>
             <td> <input type="text" name="name"/></td>
         </tr>
+
+        <tr>
+            <td>Niveau</td>
+            <td>
+                <form>
+                    <select type="text" name="lvl">
+                        <option>3</option>
+                        <option>3+</option>
+                        <option>4a</option>
+                        <option>4b</option>
+                        <option>4c</option>
+                        <option>5a</option>
+                        <option>5b</option>
+                        <option>5c</option>
+                        <option>6a</option>
+                        <option>6a+</option>
+                        <option>6b</option>
+                        <option>6b+</option>
+                        <option>7a</option>
+                        <option>7a+</option>
+                        <option>7b</option>
+                        <option>7b+</option>
+                        <option>7c</option>
+                        <option>7c+</option>
+                        <option>8a</option>
+                        <option>8a+</option>
+                        <option>8b</option>
+                        <option>8b+</option>
+                        <option>8c</option>
+                        <option>8c+</option>
+                        <option>9a</option>
+                        <option>9a+</option>
+                    </select>
+                </form>
+
+
+            </td>
+        </tr>
     </table>
     <input type="submit" value="Submit" />
+
+
 </form>
 
 </body>
