@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ page pageEncoding="UTF-8" %>
 
 <html lang="en">
@@ -8,7 +8,8 @@
     <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
     <title>User List</title>
     <link rel="stylesheet" type="text/css"
-          href=""${pageContext.request.contextPath}/bootstrap.css"/>
+          href=""
+    ${pageContext.request.contextPath}/bootstrap.css"/>
 </head>
 <header>
     <jsp:include page="navbar.jsp"></jsp:include>
@@ -24,24 +25,25 @@
             <th>Rang</th>
         </tr>
 
-        <c:forEach  items="${memberList}" var ="member">
+        <c:forEach items="${memberList}" var="member">
             <tr>
                 <td>${member.login}</td>
                 <td>${member.password}</td>
-                <td>${member.role}</td>
-
+                <td>${member.role.rang}
+                </td>
 
 
                 <c:if test="${sessionScope.role == 'Admin'}">
                     <c:if test="${member.role == 'INVITE'}">
-                <td>
+                        <td>
 
-                    <form  method="post">
-                        <button type="submit" name="button"  value="${member.email}"> Passer au rang de membre </button>
+                            <form method="post">
+                                <button type="submit" name="button" value="${member.email}"> Passer au rang de membre
+                                </button>
 
-                    </form>
+                            </form>
 
-                </td>
+                        </td>
                     </c:if>
 
                 </c:if>

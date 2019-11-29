@@ -32,6 +32,8 @@
 <div class="container">
 <p> <b> Pour les non-initiés, voici quelques éléments du vocabulaire du grimpeur : </b></p>
 
+
+
 <ul>
     <li>Un site ou spot, c’est un lieu où il est possible de grimper.</li>
     <li>Les sites peuvent être découpés en plusieurs secteurs qui regroupent un ensemble de voies.</li>

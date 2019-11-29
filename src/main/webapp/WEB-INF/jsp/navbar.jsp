@@ -20,7 +20,7 @@
         </li>
 
         <li class="nav-item">
-                <a class="nav-link" href="${pageContext.request.contextPath}/loginPage">Se connecter</a>
+                <a class="nav-link" href="${pageContext.request.contextPath}/login">Se connecter</a>
         </li>
   </c:if>
 

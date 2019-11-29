@@ -11,8 +11,8 @@ import org.sid.projetnumero6.entities.Member;
 @Mapper
 public interface BookingMapper  {
 
-    @Mapping(target = "climbPath", source = "climbPath")
-    @Mapping(target = "member", source = "member")
+    @Mapping(target = "member", source = "owner")
+
 
 
 
@@ -20,8 +20,7 @@ public interface BookingMapper  {
 
     BookingDTO toBooking(Booking entity);
 
-    @Mapping(target = "climbPath", source = "climbPath")
-    @Mapping(target = "member", source = "member")
+    @Mapping(target = "owner", source = "member")
 
 
 

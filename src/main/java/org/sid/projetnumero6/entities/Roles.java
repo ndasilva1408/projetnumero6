@@ -1,14 +1,29 @@
 package org.sid.projetnumero6.entities;
 
-public enum Roles {ADMIN("Admin"),MEMBRE("Membre"),INVITE("Invite");
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
-     String abreviation ;
+import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
-     Roles(String abreviation) {
-        this.abreviation = abreviation ;
-    }
+@NoArgsConstructor
+@AllArgsConstructor
+@Getter
+@Setter
 
-    public String getAbreviation() {
-        return  this.abreviation ;
-    }  }
+@Entity
+public class Roles {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    Long id;
+
+   @OneToMany(mappedBy = "role")
+   List<Member> memberList = new ArrayList<>();
+
+    String rang;
+
+}
 

@@ -44,6 +44,16 @@ public class MemberController {
         return "memberList";
 
     }
+    @RequestMapping(value = {"/memberList"}, method = RequestMethod.POST)
+    public String changeRank(ModelMap model, HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+        String button = request.getParameter("button");
+        userService.changeRank(button);
+
+        return "index";
+
+    }
+
 
     @RequestMapping(value = {"/pageperso"}, method = RequestMethod.GET)
     public String viewPagePerso(ModelMap model) {
@@ -86,15 +96,7 @@ public class MemberController {
         return "index";
     }
 
-    @RequestMapping(value = {"/memberList"}, method = RequestMethod.POST)
-    public String changeRank(ModelMap model, HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        String button = request.getParameter("button");
-        userService.changeRank(button);
-
-        return "index";
-
-    }
 
 
 }

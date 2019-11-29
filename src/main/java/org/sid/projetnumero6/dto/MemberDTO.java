@@ -20,6 +20,7 @@ public class MemberDTO {
     private Long id;
     List<TOPODTO> topo;
     List<NoteDTO> noteList;
+    RolesDTO rolesDTO;
     String login;
     String password;
     String birth_date;
@@ -28,8 +29,10 @@ public class MemberDTO {
     String address;
     String license_number;
     String climbing_lvl;
-    String role;
+
     String email;
+    boolean active;
+    boolean demandeDePret;
 
 
 

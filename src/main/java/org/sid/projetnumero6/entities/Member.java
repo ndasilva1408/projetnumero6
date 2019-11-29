@@ -15,50 +15,52 @@ import java.util.Date;
 import java.util.List;
 
 
-
-@NoArgsConstructor @AllArgsConstructor
-@Getter @Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@Getter
+@Setter
 
 @Entity
 public class Member implements Serializable {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY )
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
 
-     Long id;
+    Long id;
 
 
-    @ManyToMany(mappedBy = "member",fetch = FetchType.LAZY)
-     List<TOPO> topo = new ArrayList<>();
+    @ManyToMany(mappedBy = "member", fetch = FetchType.LAZY)
+    List<TOPO> topo = new ArrayList<>();
 
+
+    @ManyToOne
+    Roles role;
     @OneToMany(mappedBy = "member")
-    List<Note> noteList= new ArrayList<>();
+    List<Note> noteList = new ArrayList<>();
     @OneToMany(mappedBy = "owner")
     List<Booking> bookingDemandList;
     @OneToMany(mappedBy = "booker")
     List<Booking> bookingList;
 
-     String login;
-     String password;
+    String login;
+    String password;
     @Column(name = "birth_date")
-     String birthDate;
+    String birthDate;
     @Column(name = "first_name")
-     String firstName;
+    String firstName;
     @Column(name = "last_name")
-     String lastName;
-     String address;
+    String lastName;
+    String address;
     @Column(name = "license_number")
-     String licenseNumber;
-    @Column (name = "climbing_lvl")
+    String licenseNumber;
+    @Column(name = "climbing_lvl")
     public String climbingLvl;
 
 
-     public Roles role;
-
-     String email;
+    String email;
 
 
-     boolean demandeDePret=false;
-
+    boolean demandeDePret = false;
+    boolean active = true;
 
 
 }

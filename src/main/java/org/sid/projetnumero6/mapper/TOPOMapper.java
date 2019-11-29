@@ -13,7 +13,6 @@ public interface TOPOMapper  {
 
     TOPOMapper INSTANCE = Mappers.getMapper(TOPOMapper.class);
     @Mapping(target = "place", source = "place")
-    @Mapping(target = "member", source = "member")
     @Mapping(target="id",source = "id")
 
 
@@ -23,7 +22,6 @@ public interface TOPOMapper  {
 
 
     @Mapping(target = "place", source = "place")
-    @Mapping(target = "member", source = "member")
     @Mapping(target="id",source = "id")
 
 
