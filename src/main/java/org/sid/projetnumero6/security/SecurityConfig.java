@@ -34,7 +34,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .dataSource(dataSource)
                 .usersByUsernameQuery("select login as principal, password as credentials, active from member where login=?")
                 .authoritiesByUsernameQuery(
-                "SELECT login AS username, rang AS role FROM member, roles  WHERE login=?")
+                "SELECT login AS username, role_id AS role FROM member  WHERE login=?")
                 .rolePrefix("ROLE_")
                 .passwordEncoder(getBCPE());
     }
@@ -42,11 +42,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.formLogin()
-                    .permitAll().successHandler(authenticationSuccessHandler)
+                    .successHandler(authenticationSuccessHandler)
         .and()
-                    .logout()
-                    .permitAll();
-                     http.csrf().disable();
+                    .logout();
+
 
 
 
@@ -58,17 +57,26 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 //ACCESS ADMIN
         http.authorizeRequests()
                 .antMatchers("/newtopo","/demandBooking","/createClimbPath","/addComment","/editCommentary","/newEdit","/newPlace","/saveplace","/savetopo","/validtopo")
-                    .hasRole("ADMIN");
+                    .hasRole("1");// 1 =ADMIN
+
 
 //ACCESS MEMBRE
         http.authorizeRequests()
                 .antMatchers("/newtopo","/demandBooking","/createClimbPath","/addComment","/editCommentary","/newEdit","/newPlace","/saveplace","/savetopo","/validtopo")
-                .hasRole("MEMBRE");
+                .hasRole("2");// 2 =MEMBRE
+
 
 //ACCESS INVITE
         http.authorizeRequests()
+                .antMatchers("/newtopo","/demandBooking","/createClimbPath","/addComment","/newPlace","/saveplace","/savetopo","/validtopo")
+                .hasRole("3");// 3 =INVITE
+
+//ACCESS ALL
+        http.authorizeRequests()
                 .antMatchers("/login","/index")
                 .permitAll();
+
+
 
 
 //----------------GESTION ERREUR-----------

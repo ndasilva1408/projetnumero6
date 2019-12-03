@@ -1,7 +1,6 @@
 package org.sid.projetnumero6.service;
 
 import org.sid.projetnumero6.dao.MemberRepository;
-import org.sid.projetnumero6.entities.Member;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,7 +24,6 @@ public class AuthenticationSuccessHandlerImpl implements AuthenticationSuccessHa
     @Autowired
     MemberRepository memberRepository;
 
-    private  static  final Logger logger = LoggerFactory.getLogger(AuthenticationSuccessHandlerImpl.class);
     @Override
     public void onAuthenticationSuccess(HttpServletRequest request,
                                         HttpServletResponse response,
@@ -38,6 +36,7 @@ public class AuthenticationSuccessHandlerImpl implements AuthenticationSuccessHa
             }else {
                 userName = ((User) authentication.getPrincipal()).getUsername();
             }
+            authentication.getAuthorities();
              HttpSession session = request.getSession();
              session.setAttribute("member", (memberRepository.findMemberByLoginEquals(userName)));
              session.setAttribute("topo", (memberRepository.findMemberByLoginEquals(userName)).getTopo());

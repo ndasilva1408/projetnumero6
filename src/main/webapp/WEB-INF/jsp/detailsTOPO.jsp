@@ -50,7 +50,7 @@
                         <c:if test="${topo.available == true}">
                             Disponible
 
-                            <c:if test="${sessionScope.rang == 'ADMIN' || sessionScope.rang == 'MEMBRE'}">
+                            <c:if test="${sessionScope.rang == 'ADMIN' || sessionScope.rang == 'MEMBRE' || sessionScope.rang == 'INVITE'}">
 
 
                                 <c:forEach var="entry" items="${topo.member}">
@@ -90,7 +90,7 @@
                 <div class="text"> "${entry.text}"
                 </div>
                 <div class="auteur"><b>${entry.member.login}</b></div>
-                <c:if test="${sessionScope.rang == 'ADMIN' || sessionScope.rang == 'MEMBRE'}">
+                <c:if test="${sessionScope.rang == 'ADMIN' || sessionScope.rang == 'MEMBRE' }">
 
                     <a class="btn btn-default btn-lg active" role="button"
 
@@ -108,7 +108,7 @@
         </p>
 
 
-        <c:if test="${sessionScope.rang == 'ADMIN' || sessionScope.rang == 'MEMBRE'}">
+        <c:if test="${sessionScope.rang == 'ADMIN' || sessionScope.rang == 'MEMBRE' || sessionScope.rang == 'INVITE'}">
 
 
             <form action="addComment" method="post">
@@ -127,7 +127,7 @@
 
         </c:if>
 
-        <c:if test="${sessionScope.rang == 'ADMIN' || sessionScope.rang == 'MEMBRE'}">
+        <c:if test="${sessionScope.rang == 'ADMIN' || sessionScope.rang == 'MEMBRE' || sessionScope.rang == 'INVITE'}">
             <li class="nav-item">
                 <a class="nav-link" href="${pageContext.request.contextPath}/createClimbPath">Ajouter une
                     voie </a>

@@ -8,7 +8,7 @@
     <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
     <title>User List</title>
     <link rel="stylesheet" type="text/css"
-          href=""
+          href="
     ${pageContext.request.contextPath}/bootstrap.css"/>
 </head>
 <header>

@@ -22,10 +22,14 @@ public class MainController  {
     }
 
 
+// -------------- ERROR MAPPING -----------
+
+        @RequestMapping(value = "/403")
+        public String handler403(){
+            return "403";
+        }
+    }
 
 
 
 
-
-
-}
