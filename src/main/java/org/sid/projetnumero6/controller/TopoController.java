@@ -1,15 +1,11 @@
 package org.sid.projetnumero6.controller;
 
-import antlr.collections.AST;
 import org.sid.projetnumero6.dao.MemberRepository;
 import org.sid.projetnumero6.dao.PlaceRepository;
 import org.sid.projetnumero6.dao.TOPORepository;
-import org.sid.projetnumero6.dto.TOPODTO;
 import org.sid.projetnumero6.entities.Member;
 import org.sid.projetnumero6.entities.Place;
 import org.sid.projetnumero6.entities.TOPO;
-import org.sid.projetnumero6.service.TopoService;
-import org.sid.projetnumero6.service.TopoServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -26,14 +22,11 @@ import javax.validation.Valid;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
 
 @Controller
 public class TopoController {
-    @Autowired
-    TopoService topoService;
     @Autowired
     TOPORepository topoRepository;
     @Autowired

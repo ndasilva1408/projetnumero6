@@ -59,7 +59,7 @@
                         Details
                     </a>
                 </td>
-                <c:if test="${sessionScope.role == 'Admin'}">
+                <c:if test="${sessionScope.rang == 'ADMIN'}">
                     <td>
                         <form  method="post">
                             <button type="submit" name="button"  value="${topo.id}"> Supprimer </button>

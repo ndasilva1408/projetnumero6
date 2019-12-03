@@ -45,7 +45,7 @@
     </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="${pageContext.request.contextPath}/deconnect"> <u>Se Déconnecter</u> </a>
+                <a class="nav-link" href="${pageContext.request.contextPath}/logout"> <u>Se Déconnecter</u> </a>
             </li>
 
         </c:if>

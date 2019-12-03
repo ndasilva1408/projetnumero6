@@ -11,7 +11,6 @@ import org.sid.projetnumero6.entities.TOPO;
 
 public interface TOPOMapper  {
 
-    TOPOMapper INSTANCE = Mappers.getMapper(TOPOMapper.class);
     @Mapping(target = "place", source = "place")
     @Mapping(target="id",source = "id")
 

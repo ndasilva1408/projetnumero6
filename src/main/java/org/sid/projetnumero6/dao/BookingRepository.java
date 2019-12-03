@@ -14,7 +14,6 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 @RepositoryRestResource
 public interface BookingRepository extends JpaRepository<Booking,Long> {
 
-    Booking findBookingsByOwner(Member member);
     Booking findBookingsByTopo(TOPO topo);
 
 }

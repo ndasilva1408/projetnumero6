@@ -28,13 +28,13 @@
         <c:forEach items="${memberList}" var="member">
             <tr>
                 <td>${member.login}</td>
-                <td>${member.password}</td>
+                <td>${member.password}</td> <!-- A EFFACER POUR LA SOUTENANCE -->
                 <td>${member.role.rang}
                 </td>
 
 
-                <c:if test="${sessionScope.role == 'Admin'}">
-                    <c:if test="${member.role == 'INVITE'}">
+                <c:if test="${sessionScope.rang == 'ADMIN'}">
+                    <c:if test="${member.role.rang == 'INVITE'}">
                         <td>
 
                             <form method="post">

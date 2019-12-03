@@ -11,8 +11,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 public interface NoteRepository extends JpaRepository<Note,Long> {
   Note findNoteById(Long id);
-  @Transactional
-  Note deleteNoteById(Long id);
+
 
 
 

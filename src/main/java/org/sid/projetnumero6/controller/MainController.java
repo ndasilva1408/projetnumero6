@@ -21,11 +21,7 @@ public class MainController  {
         return "index";
     }
 
-    @GetMapping("403")
-    public String notAutorized(){
 
-        return "403";
-    }
 
 
 

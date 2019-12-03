@@ -93,8 +93,11 @@ public class NoteController {
 
         String button = request.getParameter("button");
         Long button2 = Long.parseLong(button);
+        Note deletedNote= new Note();
 
-        noteRepository.deleteNoteById(button2);
+       deletedNote= noteRepository.findNoteById(button2);
+
+        noteRepository.delete(deletedNote);
 
 
         return "index";

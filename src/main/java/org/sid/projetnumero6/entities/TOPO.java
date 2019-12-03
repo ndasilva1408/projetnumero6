@@ -24,18 +24,18 @@ public class TOPO implements Serializable {
     private Long id;
 
 
-    @ManyToMany(fetch = FetchType.LAZY,cascade = {CascadeType.ALL})
+    @ManyToMany(fetch = FetchType.EAGER,cascade = {CascadeType.ALL})
     private List<Member> member;
     
 
     @ManyToOne
     private Place place;
 
-    @OneToMany(mappedBy = "topo")
+    @OneToMany(mappedBy = "topo", fetch = FetchType.EAGER)
     List<Note> noteList;
-    @OneToMany(mappedBy = "topo")
+    @OneToMany(mappedBy = "topo", fetch = FetchType.EAGER)
     List<ClimbPath> climbPathList;
-    @OneToMany(mappedBy = "topo")
+    @OneToMany(mappedBy = "topo", fetch = FetchType.EAGER)
     List<Booking> bookingList;
 
 

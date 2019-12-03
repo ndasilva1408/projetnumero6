@@ -20,9 +20,9 @@ public class Projetnumero6Application {
        ApplicationContext ctx= SpringApplication.run(Projetnumero6Application.class, args);
 
 //---- Creation super user--------------
- /*      MemberRepository memberRepository=ctx.getBean(MemberRepository.class);
-        RolesRepository rolesRepository=ctx.getBean(RolesRepository.class);
-        BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder();
+  /*     MemberRepository memberRepository=ctx.getBean(MemberRepository.class);
+      RolesRepository rolesRepository=ctx.getBean(RolesRepository.class);
+          BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder();
 
         List<Roles> rolesList=new ArrayList<>();
        Roles roles;
@@ -36,6 +36,8 @@ public class Projetnumero6Application {
         rolesRepository.save(new Roles(Long.parseLong("2"),null,"MEMBRE"));
         rolesRepository.save(new Roles(Long.parseLong("3"),null,"INVITE"));
 */
+
+
 
       }
 

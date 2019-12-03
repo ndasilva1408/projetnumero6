@@ -28,17 +28,17 @@ public class Member implements Serializable {
     Long id;
 
 
-    @ManyToMany(mappedBy = "member", fetch = FetchType.LAZY)
+    @ManyToMany(mappedBy = "member", fetch = FetchType.EAGER)
     List<TOPO> topo = new ArrayList<>();
 
 
     @ManyToOne
     Roles role;
-    @OneToMany(mappedBy = "member")
+    @OneToMany(mappedBy = "member", fetch = FetchType.EAGER)
     List<Note> noteList = new ArrayList<>();
-    @OneToMany(mappedBy = "owner")
+    @OneToMany(mappedBy = "owner", fetch = FetchType.EAGER)
     List<Booking> bookingDemandList;
-    @OneToMany(mappedBy = "booker")
+    @OneToMany(mappedBy = "booker", fetch = FetchType.EAGER)
     List<Booking> bookingList;
 
     String login;
