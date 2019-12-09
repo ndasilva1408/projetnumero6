@@ -1,0 +1,44 @@
+body{
+
+}
+
+.panel-heading {
+    margin-left: auto;
+    margin-right: auto;
+    width: 20%;
+    font-size: x-large;
+    font-family: "Malgun Gothic";
+}
+
+.panel-body {
+    margin-left: 5em;
+    margin-right: 5em;
+}
+.zone-texte{
+    display: inline-block;
+    margin-top: 3%;
+    width: 50%;
+}
+
+.Lieu{
+    font-size: large;
+    font-family: "Mongolian Baiti",Serif;
+}
+.imgTopo{
+    display: inline-block;
+    width: 40%;
+   float: right;
+    margin-top: 3%;
+}
+.commentary{
+    width: 45%;
+   border-style: groove;
+    border-radius: 5px;
+    border-color: #856404;
+    margin-top: 8px;
+
+}
+
+.auteur{
+    margin-left:90%;
+}
