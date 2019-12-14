@@ -8,7 +8,12 @@
 
     <title>Registration Form</title>
 </head>
+
 <body>
+<header>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</header>
+
 <h1>Register Form</h1>
 <form id="cbform" action="" method="post" >
     <table style="with: 50%">

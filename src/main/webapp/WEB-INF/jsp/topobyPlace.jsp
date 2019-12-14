@@ -12,6 +12,10 @@
           href=""${pageContext.request.contextPath}/bootstrap.min.css"/>
 </head>
 
+<header>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</header>
+
 <div class="container">
     <h3>Nos TOPOS</h3>
 
@@ -24,7 +28,14 @@
                 <td> <input type="text" name="mc"></td>
                 <td> <input type="submit" value="chercher"></td>
             </tr>
+            <tr>
+                <td>Recherche par niveau:</td>
+                <td> <input type="text" name="nr"></td>
+                <td> <input type="submit" value="chercher"></td>
+            </tr>
         </table>
+
+
     </form>
 
 
@@ -39,8 +50,12 @@
             <th class="th-sm">Région
 
             </th>
+            <th class="th-sm">Nombre de voies
+
+            </th>
             <th class="th-sm">Détails
             </th>
+
 
 
 
@@ -53,6 +68,7 @@
                 <td>${topo.place.name}</td>
 
                 <td>${topo.name}</td>
+                <td>${topo.climbPathList.size()}</td>
 
                 <td>
                     <a href="topoRQPR?id=${topo.id}">
@@ -79,6 +95,9 @@
             <th>Lieu
             </th>
             <th>Région
+            </th>
+            <th>Nombre de voies
+
             </th>
             <th>Détails
             </th>

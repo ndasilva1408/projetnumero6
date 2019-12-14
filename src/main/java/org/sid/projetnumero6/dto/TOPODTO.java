@@ -30,5 +30,7 @@ public class TOPODTO {
     private String name;
     private String description;
     private boolean available;
+    private String dateDeParution;
     private String urlimg;
+    private boolean officiel= false;
 }

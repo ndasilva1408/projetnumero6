@@ -8,7 +8,7 @@
 </head>
 
 <jsp:include page="navbar.jsp"></jsp:include>
-
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
 <body>
 <a><b>Bonjour ${sessionScope.member.login}</b></a>

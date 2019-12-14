@@ -2,8 +2,8 @@
 <%@ page pageEncoding="UTF-8" %>
 
 <body>
+
 <p>
-<link type="text/css" rel="stylesheet" href="bootstrap/static.css/navbarstyle.css">
 <link type="text/css" rel="stylesheet" href="bootstrap/dist/css/bootstrap.min.css">
     <nav class="navbar navbar-expand-sm bg-dark justify-content-center ">
         <ul class="navbar-nav mr-auto" >
@@ -11,7 +11,7 @@
                 <a class="nav-link" href="${pageContext.request.contextPath}/index">Accueil </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="${pageContext.request.contextPath}/memberList">Person List</a>
+                <a class="nav-link" href="${pageContext.request.contextPath}/memberList">Liste des Membres</a>
             </li>
 
   <c:if test="${sessionScope.member.login == null}">

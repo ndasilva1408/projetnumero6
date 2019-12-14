@@ -1,5 +1,6 @@
 package org.sid.projetnumero6.controller;
 
+import org.sid.projetnumero6.dao.ClimbPathRepository;
 import org.sid.projetnumero6.dao.MemberRepository;
 import org.sid.projetnumero6.dao.PlaceRepository;
 import org.sid.projetnumero6.dao.TOPORepository;
@@ -33,13 +34,15 @@ public class TopoController {
     PlaceRepository placeRepository;
     @Autowired
     MemberRepository memberRepository;
+    @Autowired
+    ClimbPathRepository climbPathRepository;
 
 
     Place place;
     TOPO topo;
 
 
-    // Liste des topos
+    // Liste des topos + recherche
     @RequestMapping(value = {"/regionList"}, method = RequestMethod.GET)
     public String viewTOPOlist(ModelMap model,
                                HttpServletRequest request,
@@ -48,11 +51,17 @@ public class TopoController {
             throws ServletException, IOException {
 
         String mc = request.getParameter("mc");
+        String nr = request.getParameter("nr");
 
-
-        if (mc != null) {
-            Page<TOPO> topos = topoRepository.chercher("%" + mc + "%", new PageRequest(p, s));
-            model.put("topoList", topos.getContent());
+        if (mc != null || nr != null) {
+            if (nr == "") {
+                Page<TOPO> topos = topoRepository.chercher("%" + mc + "%", new PageRequest(p, s));
+                model.put("topoList", topos.getContent());
+            }
+            if (mc == "") {
+                Page<TOPO> topos = topoRepository.findTOPOSByClimbPathList(climbPathRepository.searchByLvl(nr), new PageRequest(p, s));
+                model.put("topoList", topos.getContent());
+            }
 
         } else {
 
@@ -62,8 +71,9 @@ public class TopoController {
             int[] pages = new int[topos.getTotalPages()];
             model.addAttribute("pages", pages);
 
-
         }
+
+
         return "topobyPlace";
 
     }
@@ -143,7 +153,7 @@ public class TopoController {
         topos.add(topo);
 
 
- //Et on les ajoutes pour créer les liaisons
+        //Et on les ajoutes pour créer les liaisons
         member.setTopo(topos);
         topo.setMember(members);
         topo.setPlace(topoPlace);

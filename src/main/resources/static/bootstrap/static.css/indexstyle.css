@@ -7,6 +7,15 @@ display: block;
 }
 body
 {
-
     width: 100%;
+}
+footer
+{
+    margin-top: 5%;
+    color: #721c24;
+}
+.article
+{
+    margin-top: 5%;
+    margin-bottom: 10%;
 }

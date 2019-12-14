@@ -43,6 +43,7 @@ public class TOPO implements Serializable {
     private String description;
     private String urlimg;
     private boolean available;
+    private String dateDeParution;
     private boolean officiel= false;
 
 

@@ -11,7 +11,7 @@
 </head>
 <body>
 <header>
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <jsp:include page="navbar.jsp"></jsp:include>
 </header>
 <div class="container">

@@ -13,10 +13,13 @@
 </head>
 
 <body>
+<header>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</header>
 <div id="container">
 
     <div class="panel-heading">
-        <label>"${topo.name}"</label>
+        <label>"${topo.name}" (Edition du: ${topo.dateDeParution})</label>
     </div>
     <div class="panel-body">
 
@@ -73,7 +76,7 @@
 
 
                         <c:if test="${topo.available == false}">
-                            Tuto Indisponible
+                            Topo Indisponible
                         </c:if>
 
                     </label>
@@ -133,7 +136,7 @@
 
         </c:if>
 
-        <c:if test="${sessionScope.rang == 'ADMIN' || sessionScope.rang == 'MEMBRE' || sessionScope.rang == 'INVITE'}">
+        <c:if test="${sessionScope.rang == 'ADMIN' || sessionScope.rang == 'MEMBRE' }">
 
             <c:if test="${topo.officiel == false}">
                 <form action="topoRQPR" method="post">

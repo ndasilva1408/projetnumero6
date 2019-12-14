@@ -13,12 +13,14 @@
 </head>
 <header>
     <jsp:include page="navbar.jsp"></jsp:include>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 </header>
 <body>
-<h1>User List</h1>
+<h1>Liste des utilisateurs enregistrés</h1>
 
 <div>
-    <table>
+    <table class="table table-striped table-bordered table-sm">
         <tr>
             <th>Login</th>
             <th>Niveau</th>
@@ -30,12 +32,13 @@
         <c:forEach items="${memberList}" var="member">
             <tr>
                 <c:if test="${member.active == true}">
-                <td>${member.login}</td>
-                <td>${member.climbingLvl}</td>
-                <td>${member.email}</td>
-                <td>${member.role.rang}</td>
+                    <c:if test="${member.role.rang != 'ADMIN'}">
+                        <td>${member.login}</td>
+                        <td>${member.climbingLvl}</td>
+                        <td>${member.email}</td>
+                        <td>${member.role.rang}</td>
+                    </c:if>
                 </c:if>
-
 
 
                 <c:if test="${sessionScope.rang == 'ADMIN'}">

@@ -7,6 +7,9 @@
 
 </head>
 <body>
+<header>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</header>
 
 <img class="bann-amicale" src="bootstrap/bankimage/LesAmisDelEscalade.png" style="width:150px" alt="Logo"/>
 

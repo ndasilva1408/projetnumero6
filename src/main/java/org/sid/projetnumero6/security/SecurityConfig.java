@@ -55,7 +55,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 //ACCESS MEMBRE
        http.authorizeRequests()
                 .antMatchers( "/editCommentary", "/newEdit")
-                .access("hasRole('ROLE_1') or hasRole('ROLE_2')");// 1 =ADMIN
+                .access("hasRole('ROLE_1') or hasRole('ROLE_2')");// 1 =ADMIN 2= MEMBRE
 
 //ACCESS INVITE
         http.authorizeRequests()

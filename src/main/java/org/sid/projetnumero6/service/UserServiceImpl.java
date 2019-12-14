@@ -53,9 +53,7 @@ public class UserServiceImpl implements UserService {
 
         Member member = memberRepository.findByEmail(email);
 
-        //List<Roles> rolesList = new ArrayList<Roles>();
         roles= rolesRepository.findRolesByRangEquals("MEMBRE");
-        //rolesList.add(roles);
         member.setRole(roles);
 
         memberRepository.save(member);
