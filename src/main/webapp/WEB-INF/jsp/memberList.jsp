@@ -43,6 +43,8 @@
 
                 <c:if test="${sessionScope.rang == 'ADMIN'}">
                     <c:if test="${member.role.rang == 'INVITE'}">
+                        <c:if test="${member.active == true}">
+
                         <td>
 
                             <form method="post">
@@ -52,6 +54,7 @@
                             </form>
 
                         </td>
+                    </c:if>
                     </c:if>
 
                 </c:if>
