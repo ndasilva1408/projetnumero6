@@ -22,9 +22,13 @@ import java.util.List;
 public class PlaceDTO {
 
     private Long id;
-    private List<NoteDTO> note;
     private List<TOPODTO> topo;
     private String name;
-
-
+    private String description;
+    private String factToKnow;
+    private String bestMomentToGo;
+    private String orientation;
+    private String height;
+    private String type;
+    private String region;
 }

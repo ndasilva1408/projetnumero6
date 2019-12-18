@@ -21,7 +21,7 @@ public class TOPODTO {
 
     private Long id;
     private List<MemberDTO> member;
-    private PlaceDTO place;
+    private List<PlaceDTO> place;
     private List<ClimbPathDTO> climbPathList;
     private List<NoteDTO> noteList;
     private List<BookingDTO>bookingList;

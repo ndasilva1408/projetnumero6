@@ -65,7 +65,9 @@
 
         <c:forEach  items="${topoList}" var ="topo">
             <tr>
-                <td>${topo.place.name}</td>
+                <c:forEach  var ="entry" items="${topo.place}">
+                <td>${entry.name}</td>
+                </c:forEach>
 
                 <td>${topo.name}</td>
                 <td>${topo.climbPathList.size()}</td>

@@ -41,7 +41,7 @@ public interface TOPORepository extends JpaRepository<TOPO,Long> {
    Page<TOPO> findTOPOSByClimbPathList(List<ClimbPath> climbPathlist,Pageable pageable);
 
     @Transactional
-    @Query("select t from TOPO t where t.name like :x" + " or t.place.name like: x" )
+    @Query("select t from TOPO t where t.name like :x" )
      Page<TOPO> chercher (@Param("x") String mc, Pageable pageable);
 
 

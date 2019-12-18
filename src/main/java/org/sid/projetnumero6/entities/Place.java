@@ -5,6 +5,7 @@ import lombok.*;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 @ToString
@@ -19,18 +20,19 @@ public class Place implements Serializable {
 
     private Long id;
 
-
-
-    @OneToMany (targetEntity = Note.class,mappedBy = "place")
-
-    private List<Note> note;
-
-    @OneToMany(targetEntity = TOPO.class,mappedBy = "place")
-
-    private List<TOPO> topo;
+    @ManyToMany(mappedBy = "place", fetch = FetchType.EAGER)
+    List<TOPO> topo = new ArrayList<>();
 
 
     private String name;
+    private String description;
+    private String factToKnow;
+    private String bestMomentToGo;
+    private String orientation;
+    private String height;
+    private String type;
+    private String region;
+
 
 
 

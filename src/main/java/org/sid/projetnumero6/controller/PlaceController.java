@@ -5,11 +5,10 @@ import org.sid.projetnumero6.entities.Place;
 import org.sid.projetnumero6.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -43,7 +42,6 @@ public class PlaceController {
     @PostMapping(value = "/saveplace")
     public String saveplace(@Valid Place place, BindingResult bindingResult) {
         place.setTopo(null);
-        place.setNote(null);
 
         if (bindingResult.hasErrors())
             return "createPlace";
@@ -68,6 +66,16 @@ public class PlaceController {
 
         return "index";
 
+    }
+
+    @GetMapping(value = "/detailsPlace")
+    public String getPlacebyId(@RequestParam(value = "id", required = false) Long id, Model model) {
+
+        Place place = placeRepository.findPlaceById(id);
+        model.addAttribute("place", place);
+
+
+        return "detailsPlace";
     }
 
 

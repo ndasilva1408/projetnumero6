@@ -1,0 +1,36 @@
+.description{
+    display: inline-block;
+    margin-top: 3%;
+    width: 50%;
+    background-position: center;
+
+
+}
+.container{
+
+    margin-left: 5px;
+    margin-right: 5px;
+
+}
+.details{
+    display: flex;
+    justify-content: flex-end;
+}
+.details_txt{
+    float:right;
+    border-left:solid 1px;
+    padding-left:8px;
+    width: 10%;
+}
+.name{
+    font-size: larger;
+    font-family: Roboto;
+
+}
+
+h1{
+    color: #721c24;
+    margin-right: 45%;
+    margin-left: 45%;
+    font-family: Corbel;
+}

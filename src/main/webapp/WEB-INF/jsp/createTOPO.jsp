@@ -57,19 +57,19 @@
     >
 
 
-
-
-    <p>
-        <TEXTAREA name="description" rows="4" cols="40">Description</TEXTAREA>
-        <input type="submit" value="Submit"/>
-    </p>
-
     <tr>
         <td>Date de parution</td>
         <td>
             <input type="text" name="dateDeParution"/>
         </td>
     </tr>
+
+    <p>
+        <TEXTAREA name="description" rows="4" cols="40">Description</TEXTAREA>
+        <input type="submit" value="Submit"/>
+    </p>
+
+
 </form>
 
 </body>

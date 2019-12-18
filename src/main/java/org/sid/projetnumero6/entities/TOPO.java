@@ -26,10 +26,9 @@ public class TOPO implements Serializable {
 
     @ManyToMany(fetch = FetchType.EAGER,cascade = {CascadeType.DETACH})
     private List<Member> member;
-    
+    @ManyToMany(fetch = FetchType.EAGER,cascade = {CascadeType.DETACH})
+    private List<Place> place;
 
-    @ManyToOne(cascade = {CascadeType.DETACH})
-    private Place place;
 
     @OneToMany(mappedBy = "topo", fetch = FetchType.EAGER)
     List<Note> noteList;

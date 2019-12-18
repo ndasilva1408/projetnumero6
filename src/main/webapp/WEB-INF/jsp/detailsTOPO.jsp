@@ -5,7 +5,6 @@
 <%@ page pageEncoding="UTF-8" %>
 
 <head>
-    <title>${topo.place.name}</title>
     <link rel="stylesheet" type="text/css"
           href="bootstrap/dist/css/pagePresentation.css"/>
 
@@ -28,7 +27,9 @@
                 <p class="Lieu">
                     <label>Nom du Lieu:</label>
                     <label>
-                        ${topo.place.name}
+                        <c:forEach  var ="entry" items="${topo.place}">
+                            <div><a href="detailsPlace?id=${entry.id}">${entry.name}</a></div>
+                        </c:forEach>
                     </label>
                 </p>
 

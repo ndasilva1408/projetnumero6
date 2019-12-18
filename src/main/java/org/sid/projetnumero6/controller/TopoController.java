@@ -140,6 +140,7 @@ public class TopoController {
         Member member;
         List<TOPO> topos = new ArrayList<TOPO>();
         List<Member> members = new ArrayList<Member>();
+        List<Place> places = new ArrayList<Place>();
 
 //Recupération des parametres dans la JSP
         String placename = request.getParameter("placeName");
@@ -149,14 +150,17 @@ public class TopoController {
         topoPlace = placeRepository.findByName(placename);
         member = memberRepository.findMemberByLoginEquals(login);
 
+
         members.add(member);
         topos.add(topo);
+        places.add(topoPlace);
 
 
         //Et on les ajoutes pour créer les liaisons
         member.setTopo(topos);
         topo.setMember(members);
-        topo.setPlace(topoPlace);
+        topoPlace.setTopo(topos);
+        topo.setPlace(places);
         topo.setAvailable(true);
 
 
@@ -166,6 +170,7 @@ public class TopoController {
         else {
             topoRepository.save(topo);
             memberRepository.save(member);
+            placeRepository.save(topoPlace);
         }
 
         return "index";

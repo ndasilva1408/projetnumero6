@@ -12,5 +12,5 @@ public interface PlaceRepository extends JpaRepository<Place,Long> {
 
     Place deletePlaceById(Long id);
     Place findByName(String name);
-
+    Place findPlaceById(Long id);
 }

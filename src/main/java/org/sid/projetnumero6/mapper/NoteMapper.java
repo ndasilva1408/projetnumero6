@@ -11,7 +11,6 @@ import org.sid.projetnumero6.entities.Note;
 
 public interface NoteMapper  {
 
-    NoteMapper INSTANCE = Mappers.getMapper(NoteMapper.class);
 
     @Mapping(target = "member", source = "member")
     NoteDTO toNote(Note note);
