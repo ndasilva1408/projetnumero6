@@ -28,7 +28,7 @@
                     <input type="hidden" name="editor" value="${member.id}">
                     <input type="text" id="newComment" name="newComment"
                            size="200" height="150">
-                    <p>Ancien commentaire :</p>
+                    <p >Ancien commentaire :</p>
 
                     <p>${note.text}</p>
                     <input type="submit" name="Valider">

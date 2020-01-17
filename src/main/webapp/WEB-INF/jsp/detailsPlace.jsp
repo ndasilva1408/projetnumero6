@@ -6,9 +6,7 @@
 
 <head>
     <title>Détails voie</title>
-    <link rel="stylesheet" type="text/css"
-          href="
-           ${pageContext.request.contextPath}/bootstrap.min.css"/>
+    <link type="text/css" rel="stylesheet" href="bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css"
           href="bootstrap/dist/css/pagePlace.css"/>
 </head>
@@ -23,7 +21,7 @@
             <div class="form-group">
 
 
-                <form action="getPlacebyId" method="get">
+                <div action="getPlacebyId" method="get">
 
                     <div class="name" >
                         <h1>
@@ -41,35 +39,33 @@
                     </h2>
 
                     </p>
-                    <div class="details">
-                        <div class="details_txt" style="font-size:1vw">
+                    <div  class="d-flex flex-row bd-highlight mb-3" >
+                        <div  class="p-2 bd-highlight" >
+                            <div  class="details_txt">
                             <label>Type:</label>
                             <label>
                                 ${place.type}
                             </label>
+                            </div>
                         </div>
-                        <div class="details_txt" style="font-size:1vw">
+                        <div  class="p-2 bd-highlight" >
+                            <div  class="details_txt">
 
                             <label>Hauteur:</label>
                             <label>
                                 ${place.height}
                             </label>
+                            </div>
                         </div>
-                        <div class="details_txt" style="font-size:1vw">
+                        <div  class="p-2 bd-highlight">
+                            <div  class="details_txt">
                             <label>Orientation:</label>
                             <label>
                                 ${place.orientation}
                             </label>
+                            </div>
                         </div>
-                        <div class="details_txt" style="font-size:1vw">
 
-                            <label>Nombre de voies:</label>
-                            <label>
-                                <c:forEach var="entry" items="${place.topo}">
-                                    ${entry.climbPathList.size()}
-                                </c:forEach>
-                            </label>
-                        </div>
                     </div>
 
                     <div class="name">
@@ -91,17 +87,22 @@
                         </label>
 
                         <p>
+                            <h2>Quand y aller? </h2>
                             <label>
-                                ${place.bestMomentToGo}
+                                Période idéale: ${place.bestMomentToGo}
 
                             </label>
                         </p>
                         <p>
+                            <h2>A savoir</h2>
                             <label>
                                 ${place.factToKnow}
 
                             </label>
                         </p>
+
+
+                            <h2>Topos à ${place.name}</h2>
 
                         <c:forEach var="entry" items="${place.topo}">
                         <a href="topoRQPR?id=${entry.id}">
@@ -109,7 +110,7 @@
                         </c:forEach>
 
 
-                </form>
+                </div>
 
 
             </div>

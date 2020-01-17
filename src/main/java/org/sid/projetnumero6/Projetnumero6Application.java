@@ -1,17 +1,8 @@
 package org.sid.projetnumero6;
 
-import org.sid.projetnumero6.dao.MemberRepository;
-import org.sid.projetnumero6.dao.RolesRepository;
-import org.sid.projetnumero6.entities.Member;
-import org.sid.projetnumero6.entities.Roles;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-
-import java.util.ArrayList;
-import java.util.List;
 
 @SpringBootApplication
 public class Projetnumero6Application {

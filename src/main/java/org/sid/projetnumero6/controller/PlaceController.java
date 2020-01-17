@@ -4,6 +4,8 @@ import org.sid.projetnumero6.dao.PlaceRepository;
 import org.sid.projetnumero6.entities.Place;
 import org.sid.projetnumero6.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
@@ -24,9 +26,31 @@ public class PlaceController {
     UserService userService;
 
     @RequestMapping(value = {"/placeList"}, method = RequestMethod.GET)
-    public String viewPlaceList(ModelMap model) {
+    public String viewTOPOlist(ModelMap model,
+                               HttpServletRequest request,
+                               @RequestParam(name = "page", defaultValue = "0") int p,
+                               @RequestParam(name = "size", defaultValue = "8") int s)
+            throws ServletException, IOException {
 
-        model.put("placeList", placeRepository.findAll());
+        String nr = request.getParameter("nr");
+
+        if ( nr != null) {
+
+                Page<Place> places = placeRepository.findPlaceByNameContainsIgnoreCaseOrRegionContainsIgnoreCase( nr ,nr , new PageRequest(p, s));
+                model.put("placeList", places.getContent());
+
+
+        } else {
+
+            Page<Place> places = placeRepository.findAll(new PageRequest(p, s));
+            model.addAttribute("placeList", places.getContent());
+
+            int[] pages = new int[places.getTotalPages()];
+            model.addAttribute("pages", pages);
+
+        }
+
+
         return "placeList";
 
     }

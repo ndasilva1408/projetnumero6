@@ -1,10 +1,6 @@
 package org.sid.projetnumero6.dao;
-
-import org.sid.projetnumero6.dto.ClimbPathDTO;
 import org.sid.projetnumero6.entities.ClimbPath;
-import org.sid.projetnumero6.entities.TOPO;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;

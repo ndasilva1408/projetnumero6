@@ -5,7 +5,6 @@ import org.sid.projetnumero6.dao.TOPORepository;
 import org.sid.projetnumero6.entities.ClimbPath;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
@@ -49,13 +48,5 @@ public class ClimbPathController {
         }
     }
 
-  @GetMapping (value = "/detailsClimbPath")
-    public String getClimbPathbyId(@RequestParam(value = "id", required = false) Long id, Model model) {
 
-        ClimbPath climbPath = climbPathRepository.findClimbPathById(id);
-        model.addAttribute("climbPath", climbPath);
-
-
-        return "detailsClimbPath";
-    }
 }

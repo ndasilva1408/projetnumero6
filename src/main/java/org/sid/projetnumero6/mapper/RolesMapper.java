@@ -1,7 +1,6 @@
 package org.sid.projetnumero6.mapper;
 
 import org.mapstruct.Mapper;
-import org.mapstruct.Mapping;
 import org.sid.projetnumero6.dto.RolesDTO;
 import org.sid.projetnumero6.entities.Roles;
 

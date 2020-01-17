@@ -17,19 +17,13 @@
 </header>
 
 <div class="container">
-    <h3>Nos TOPOS</h3>
 
     <jsp:include page="navbar.jsp"></jsp:include>
 
     <form action="" method="get">
         <table>
             <tr>
-                <td>Mot Clé:</td>
-                <td><input type="text" name="mc"></td>
-                <td><input type="submit" value="chercher"></td>
-            </tr>
-            <tr>
-                <td>Recherche par niveau:</td>
+                <td>Recherche:</td>
                 <td><input type="text" name="nr"></td>
                 <td><input type="submit" value="chercher"></td>
             </tr>
@@ -43,15 +37,17 @@
         <thead>
         <tr>
             <th class="th-sm">
-                <a href="">Lieu</a>
+                <a href="">Nom</a>
 
             </th>
 
-            <th class="th-sm">Titre du Topo
+            <th class="th-sm">Région
 
             </th>
-            <th class="th-sm">Nombre de voies
+            <th class="th-sm">Nombre de Topos
 
+            </th>
+            <th class="th-sm">Type
             </th>
             <th class="th-sm">Détails
             </th>
@@ -61,26 +57,24 @@
         </thead>
         <tbody>
 
-        <c:forEach items="${topoList}" var="topo">
+        <c:forEach items="${placeList}" var="place">
             <tr>
-                <c:forEach var="entry" items="${topo.place}">
-                    <td>
-                        <div><a href="detailsPlace?id=${entry.id}">${entry.name}</a></div>
-                    </td>
-                </c:forEach>
-
-                <td>${topo.name}</td>
-                <td>${topo.climbPathList.size()}</td>
 
                 <td>
-                    <a href="topoRQPR?id=${topo.id}">
-                        Details
-                    </a>
+                        ${place.name}
+                </td>
+
+
+                <td>${place.region}</td>
+                <td>${place.topo.size()}</td>
+                <td>${place.type}</td>
+
+                <td><a href="detailsPlace?id=${place.id}">Détails</a>
                 </td>
                 <c:if test="${sessionScope.rang == 'ADMIN'}">
                     <td>
                         <form method="post">
-                            <button type="submit" name="button" value="${topo.id}"> Supprimer</button>
+                            <button type="submit" name="button" value="${place.id}"> Supprimer</button>
 
                         </form>
                     </td>
@@ -94,12 +88,14 @@
         </tbody>
         <tfoot>
         <tr>
-            <th>Lieu
+            <th>Nom
             </th>
-            <th>Titre du Topo
+            <th>Région
             </th>
-            <th>Nombre de voies
+            <th>Nombre de Topos
 
+            </th>
+            <th>Type
             </th>
             <th>Détails
             </th>
@@ -113,7 +109,7 @@
             <li>
 
                 <c:forEach items="${pages}" var="pa" varStatus="status">
-                    <a href="regionList?page=${status.index}">
+                    <a href="placeList?page=${status.index}">
                         <c:out value="${status.index}"/>
                     </a>
                 </c:forEach>

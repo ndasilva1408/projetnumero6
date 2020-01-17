@@ -1,4 +1,3 @@
-
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
@@ -11,69 +10,58 @@
 </head>
 <body>
 <header>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 </header>
 <h1>Nouveau site d'escalade</h1>
-<form id="topoform" action="saveplace" method="post" >
+<form id="topoform" action="saveplace" method="post">
     <table style="with: 50%">
         <tr>
             <td>Nom du lieu</td>
-            <td> <input type="text" name="name"/></td>
+            <td><input type="text" name="name"/></td>
         </tr>
 
         <tr>
             <td>Type</td>
-            <td>   <form>
-                <select type="text" name="type">
-                    <option>falaise</option>
-                    <option>bloc</option>
-                    <option>falaise,bloc</option>
-                </select>
-            </form></td>
+            <td>
+                <form>
+                    <select type="text" name="type">
+                        <option>falaise</option>
+                        <option>bloc</option>
+                        <option>falaise,bloc</option>
+                    </select>
+                </form>
+            </td>
         </tr>
         <tr>
             <td>Region</td>
-            <td> <input type="text" name="region"/></td>
+            <td><input type="text" name="region"/></td>
         </tr>
 
         <tr>
             <td>Hauteur</td>
-            <td> <input type="text" name="height"/></td>
+            <td><input type="text" name="height"/></td>
         </tr>
 
         <tr>
             <td>A savoir</td>
-            <td> <input type="text" name="factToKnow"/></td>
+            <td><input type="text" name="factToKnow"/></td>
         </tr>
 
         <tr>
             <td>Meilleur moment pour s'y rendre</td>
-            <td> <input type="text" name="bestMomentToGo"/></td>
+            <td><input type="text" name="bestMomentToGo"/></td>
         </tr>
 
         <tr>
             <td>Orientation</td>
-            <td>   <form>
-                <select type="text" name="orientation">
-                    <option>N</option>
-                    <option>NE</option>
-                    <option>E</option>
-                    <option>SE</option>
-                    <option>S</option>
-                    <option>SW</option>
-                    <option>W</option>
-                    <option>NW</option>
-                </select>
-            </form></td>
+            <td>
+                <input type="text" name="orientation"/>
+            </td>
         </tr>
-
 
 
     </table>
 
-    <label for="url">Photos du site</label>
-
-    <input type="url" name="urlimg" id="url">
 
     <tr>
         <p>
@@ -83,9 +71,7 @@
     </tr>
 
 
-
 </form>
-
 
 
 </body>

@@ -1,11 +1,9 @@
 package org.sid.projetnumero6.entities;
 
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.*;
 
 import javax.persistence.*;
-import javax.validation.Valid;
 
 import java.io.Serializable;
 import java.util.List;

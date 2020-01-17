@@ -5,13 +5,11 @@ import org.sid.projetnumero6.dao.MemberRepository;
 import org.sid.projetnumero6.dao.TOPORepository;
 
 import org.sid.projetnumero6.entities.Booking;
-import org.sid.projetnumero6.entities.Member;
 import org.sid.projetnumero6.entities.TOPO;
 import org.sid.projetnumero6.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
-import org.springframework.ui.ModelMapExtensionsKt;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -21,7 +19,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
-import java.util.List;
 
 
 @Controller

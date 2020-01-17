@@ -1,9 +1,6 @@
 package org.sid.projetnumero6.dto;
 
 import lombok.*;
-import org.sid.projetnumero6.entities.ClimbPath;
-import org.sid.projetnumero6.entities.Member;
-import org.sid.projetnumero6.entities.Place;
 
 import java.util.List;
 

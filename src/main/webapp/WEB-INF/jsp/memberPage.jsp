@@ -12,7 +12,8 @@
 
 <body>
 <a><b>Bonjour ${sessionScope.member.login}</b></a>
-<p>Vos TOPOS:</p>
+<p></p>
+<p><u>Vos TOPOS:</u></p>
 <div>
     <!-- Affichage de tous les TOPOS du membre -->
     <c:forEach var="entry" items="${sessionScope.topo}">

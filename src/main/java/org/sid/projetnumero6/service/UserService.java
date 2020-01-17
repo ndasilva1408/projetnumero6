@@ -1,6 +1,5 @@
 package org.sid.projetnumero6.service;
 
-import org.sid.projetnumero6.dto.MemberDTO;
 import org.sid.projetnumero6.entities.Member;
 import org.sid.projetnumero6.entities.Place;
 

@@ -2,7 +2,6 @@ package org.sid.projetnumero6.controller;
 
 import org.sid.projetnumero6.dao.MemberRepository;
 import org.sid.projetnumero6.dao.RolesRepository;
-import org.sid.projetnumero6.dto.MemberDTO;
 import org.sid.projetnumero6.entities.Member;
 import org.sid.projetnumero6.entities.Roles;
 import org.sid.projetnumero6.service.UserService;
@@ -18,8 +17,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
-import java.util.ArrayList;
-import java.util.List;
 
 
 @Controller
@@ -60,10 +57,16 @@ public class RegisterController {
         if (userService.isMemberAlreadyPresent(member)) {
             return "register";
         }else{
+
+            //Crypt password
+
       String password2 = request.getParameter("password");
             String cryptedPassword= bCryptPasswordEncoder.encode(password2);
             member.setPassword(cryptedPassword);
+
+
             memberRepository.save(member);
+
             return "Confirmation";
         }
     }

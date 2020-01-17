@@ -7,20 +7,17 @@
 
 }
 .container{
-
     margin-left: 5px;
     margin-right: 5px;
+}
 
-}
-.details{
-    display: flex;
-    justify-content: flex-end;
-}
 .details_txt{
-    float:right;
-    border-left:solid 1px;
-    padding-left:8px;
-    width: 10%;
+    border-bottom:solid 1px;
+    border-right: solid 2px;
+    border-color: #721c24;
+    float: right;
+    margin-left: 5px;
+
 }
 .name{
     font-size: larger;

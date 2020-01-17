@@ -4,6 +4,7 @@ import org.sid.projetnumero6.dao.ClimbPathRepository;
 import org.sid.projetnumero6.dao.MemberRepository;
 import org.sid.projetnumero6.dao.PlaceRepository;
 import org.sid.projetnumero6.dao.TOPORepository;
+import org.sid.projetnumero6.entities.ClimbPath;
 import org.sid.projetnumero6.entities.Member;
 import org.sid.projetnumero6.entities.Place;
 import org.sid.projetnumero6.entities.TOPO;
@@ -55,14 +56,27 @@ public class TopoController {
 
         if (mc != null || nr != null) {
             if (nr == "") {
-                Page<TOPO> topos = topoRepository.chercher("%" + mc + "%", new PageRequest(p, s));
+                Page<TOPO> topos = topoRepository.findTOPOSByNameContainsIgnoreCase(mc, new PageRequest(p, s));
                 model.put("topoList", topos.getContent());
             }
             if (mc == "") {
-                Page<TOPO> topos = topoRepository.findTOPOSByClimbPathList(climbPathRepository.searchByLvl(nr), new PageRequest(p, s));
-                model.put("topoList", topos.getContent());
-            }
+                List<ClimbPath> cPathList = climbPathRepository.searchByLvl(nr);
 
+
+                for (int i = 0; i < cPathList.size(); i++) {
+
+                    List<ClimbPath> cPathList2 = new ArrayList<>();
+                    cPathList2.add(cPathList.get(i));
+
+
+                    Page<TOPO> topos = topoRepository.findTOPOSByClimbPathList(cPathList2, new PageRequest(p, s));
+
+
+                    model.put("topoList", topos.getContent());
+                }
+
+
+            }
         } else {
 
             Page<TOPO> topos = topoRepository.findAll(new PageRequest(p, s));

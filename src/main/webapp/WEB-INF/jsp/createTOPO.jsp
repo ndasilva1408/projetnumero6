@@ -48,21 +48,22 @@
 
 
     </table>
-
-    <label for="url">Photos du site</label>
+<p>
+    <label for="url">Couverture du TOPO</label>
 
     <input type="url" name="urlimg" id="url"
            placeholder="http://example.com"
            required
     >
-
-
+    </p>
+<p>
     <tr>
         <td>Date de parution</td>
         <td>
             <input type="text" name="dateDeParution"/>
         </td>
     </tr>
+</p>
 
     <p>
         <TEXTAREA name="description" rows="4" cols="40">Description</TEXTAREA>

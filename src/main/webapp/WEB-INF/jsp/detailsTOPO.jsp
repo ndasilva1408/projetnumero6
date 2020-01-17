@@ -8,17 +8,18 @@
     <link rel="stylesheet" type="text/css"
           href="bootstrap/dist/css/pagePresentation.css"/>
 
-    <link type="text/css" rel="stylesheet" href="bootstrap/dist/css/bootstrap.css">
+    <link type="text/css" rel="stylesheet" href="bootstrap/dist/css/bootstrap.min.css">
 </head>
 
 <body>
 <header>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 </header>
+<div class="containerbody">
 <div id="container">
 
     <div class="panel-heading">
-        <label>"${topo.name}" (Edition du: ${topo.dateDeParution})</label>
+        <label>"${topo.name}" (Edition: ${topo.dateDeParution})</label>
     </div>
     <div class="panel-body">
 
@@ -27,7 +28,7 @@
                 <p class="Lieu">
                     <label>Nom du Lieu:</label>
                     <label>
-                        <c:forEach  var ="entry" items="${topo.place}">
+                        <c:forEach var="entry" items="${topo.place}">
                             <div><a href="detailsPlace?id=${entry.id}">${entry.name}</a></div>
                         </c:forEach>
                     </label>
@@ -43,8 +44,10 @@
 
                 <p>
                     <c:forEach var="entry" items="${topo.climbPathList}">
-                <div> ${entry.name}</div>
-                <div><a href="detailsClimbPath?id=${entry.id}">Détails</a></div>
+                <div class="climbPathstyle"> ${entry.name}
+                    (${entry.lvl})
+                </div>
+
                 </c:forEach>
 
                 </p>
@@ -59,12 +62,12 @@
 
                                 <c:forEach var="entry" items="${topo.member}">
                                     <c:if test="${sessionScope.member.login != entry.login}">
-                                    <div>
+                                        <div>
 
-                                        <a href="detailsBooking?id=${entry.id}&topo.id=${topo.id}">Réservez auprès
-                                            de ${entry.login} </a>
+                                            <a href="detailsBooking?id=${entry.id}&topo.id=${topo.id}">Réservez auprès
+                                                de ${entry.login} </a>
 
-                                    </div>
+                                        </div>
                                     </c:if>
                                     <c:if test="${sessionScope.member.login == entry.login}">
                                         <a class="nav-link" href="${pageContext.request.contextPath}/createClimbPath">Ajouter
@@ -150,6 +153,7 @@
 
     </div>
 
+</div>
 </div>
 </div>
 
