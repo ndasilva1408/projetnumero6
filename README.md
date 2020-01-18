@@ -17,3 +17,6 @@ et vous rendre sur http://localhost:9090/ dans votre navigateur
 (paramètres par défault).
 Des commandes pour créer un SuperUser avec le rang ADMIN , ainsi que 3 rangs ( Admin,Membre,Invite)
 sont implantés en commentaire dans la classe Projetnumero6Application.java (en commentaire)
+
+Dans le dossier "projetnumero6", vous trouverez aussi le fichier "p6ocr.war".
+Il faut copier/coller ce fichier dans le dossier "webapp" du server Tomcat.
